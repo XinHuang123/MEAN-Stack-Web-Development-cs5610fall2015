@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Form Maker</title>
+
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -19,32 +21,34 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Custom js for this template -->
+
     <script src="app.js"></script>
     <script src="config.js"></script>
     <script src="header/header.controller.js"></script>
     <script src="sidebar/sidebar.controller.js"></script>
-    <script src="service/UserService.js"></script>
-    <script src="service/FormService.js"></script>
-    <script src="login/login.controller.js"></script>
+    <script src="./service/UserService.js"></script>
+    <script src="./service/FormService.js"></script>
+    <script src="./login/login.controller.js"></script>
+    <script src="./register/register.controller.js"></script>
+    <script src="./profile/profile.controller.js"></script>
 
 </head>
 
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <div ng-include="'header/header.view.html'"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-2">
-            <div ng-include="'sidebar/sidebar.view.html'"></div>
-        </div>
-        <div ng-view>
 
+
+<nav class="navbar navbar-inverse navbar-fixed-top" ng-include="'header/header.view.html'" ng-controller="HeaderController">
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar" ng-include="'sidebar/sidebar.view.html'" ng-controller="SidebarController">
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view>
         </div>
     </div>
 </div>
+
 </body>
+
 </html>
