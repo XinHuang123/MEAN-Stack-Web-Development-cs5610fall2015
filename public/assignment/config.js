@@ -10,20 +10,16 @@
                     templateUrl: "./home/home.view.html"
                 })
                 .when("/register", {
-                    templateUrl: "./register/register.view.html",
-                    controller: "RegisterController"
+                    templateUrl: "./register/register.view.html"
                 })
                 .when("/login", {
-                    templateUrl: "./login/login.view.html",
-                    controller: "LoginController"
+                    templateUrl: "./login/login.view.html"
                 })
                 .when("/profile", {
-                    templateUrl: "./profile/profile.view.html",
-                    controller: "ProfileController"
+                    templateUrl: "./profile/profile.view.html"
                 })
                 .when("/form", {
-                    templateUrl: "./form/form.view.html",
-                    controller: "FormController"
+                    templateUrl: "./form/form.view.html"
                 })
                 .otherwise({
                     redirectTo: "/home"
