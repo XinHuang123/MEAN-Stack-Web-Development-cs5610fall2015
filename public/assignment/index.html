@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="FormBuilderApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form Maker</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- angularjs CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.min.js"></script>
+
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Custom js for this template -->
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="header/header.controller.js"></script>
+    <script src="sidebar/sidebar.controller.js"></script>
+    <script src="service/UserService.js"></script>
+    <script src="service/FormService.js"></script>
+    <script src="login/login.controller.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div ng-include="'header/header.view.html'"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <div ng-include="'sidebar/sidebar.view.html'"></div>
+        </div>
+        <div ng-view>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
