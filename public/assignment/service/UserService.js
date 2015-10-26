@@ -23,10 +23,11 @@
             for (var i = 0; i < users.length; i++) {
                 if ((users[i].userName == userName) && (users[i].password == password)) {
                     currentUser = users[i];
-                    break;
+                    callback(currentUser);
                 }
             }
-            callback(currentUser);
+            callback(null);
+
         }
 
         function findAllUsers(callback) {
@@ -40,7 +41,7 @@
                 if (users[i].userName === user.userName) {
                     console.log("User name already exists");
                     usersExists = true;
-                    break;
+                    callback(null);
                 }
             }
 

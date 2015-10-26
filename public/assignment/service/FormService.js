@@ -27,15 +27,15 @@
         }
 
         function findAllFormsForUser(userId, callback) {
-            var requiredForms = [];
+            var findAllForms = [];
 
             for (var i = 0; i < forms.length; i++) {
                 if (forms[i].userid === userId) {
-                    requiredForms.push(forms[i]);
+                    findAllForms.push(forms[i]);
                 }
             }
 
-            callback(requiredForms);
+            callback(findAllForms);
         }
 
         function deleteFormById(formId, callback) {
