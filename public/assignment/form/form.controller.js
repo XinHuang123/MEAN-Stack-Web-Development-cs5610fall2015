@@ -15,13 +15,13 @@
 
         function init() {
             if (user == null) {
-                console.log("Creating Dummy User");
+                console.log("null");
                 user = {
                     "id": "1",
-                    "userName": "Default",
-                    "lastName": " ",
-                    "password": "password",
-                    "email": "default@default.com"
+                    "userName": "XinHuang",
+                    "lastName": "Huang",
+                    "password": "123456",
+                    "email": "xinhuang@gamil.com"
                 };
             }
 
