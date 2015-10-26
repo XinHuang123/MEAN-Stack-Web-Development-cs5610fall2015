@@ -1,55 +1,71 @@
 "use strict";
-(function(){
+(function() {
     angular
         .module("FormBuilderApp")
         .controller("FormController", FormController);
-})();
 
-function FormController($scope, $rootScope, $location, FormService){
-    var user = $rootScope.user;
+    function FormController($scope, $location, $rootScope, FormService) {
+        var user = $rootScope.currentUser;
+        $scope.addForm = addForm;
+        $scope.updateForm = updateForm;
+        $scope.deleteForm = deleteForm;
+        $scope.selectForm = selectForm;
+        $scope.currentForm = null;
 
-    if(user == null)
-        alert("please login first");
-    else{
-        RenderForm(user.id);
-        $scope.addForm = AddForm;
-        $scope.deleteForm = DeleteForm;
-        $scope.selectForm = SelectForm;
-        $scope.updateForm = UpdateForm;
-    }
+        function init() {
+            if (user == null) {
+                console.log("Creating Dummy User");
+                user = {
+                    "id": "1",
+                    "userName": "Default",
+                    "lastName": " ",
+                    "password": "password",
+                    "email": "default@default.com"
+                };
+            }
 
-    function RenderForm(userId){
-        FormService.findAllFormsForUser(userId, function(forms){
-            $scope.forms = forms;
-        })
-    }
+            FormService.findAllFormsForUser(user.id, function(response) {
+                $scope.forms = response;
+            });
+        }
 
-    function AddForm(){
-        var form = $scope.form1;
-        FormService.createFormForUser(user.id, form, function(form){
-            RenderForm(user.id);
-        })
-    }
+        init();
 
-    function UpdateForm(){
-        var form = $scope.form1;
-        if(form.id == null)
-            alert("This form has not been created yet, please create it first");
-        else{
-            FormService.updateFormById(form.id, form, function(form){
-                RenderForm(user.id);
-            })
+        function addForm() {
+            var newForm = null;
+            var form = {
+                "name": $scope.name
+            };
+
+            FormService.createFormForUser(user.id, form, function(form) {
+                newForm = form;
+            });
+
+            $scope.forms.push(newForm);
+            $scope.name = null;
+        }
+
+        function updateForm() {
+            FormService.updateFormById(user.id, $scope.currentForm, function(form) {
+                $scope.currentForm = form;
+            });
+
+            $scope.name = null;
+            console.log("Updated Form");
+        }
+
+        function deleteForm(index) {
+            var formId = $scope.forms[index].id;
+
+            FormService.deleteFormById(formId, function(forms) {
+                console.log("Form Deleted");
+                $scope.forms = forms;
+            });
+        }
+
+        function selectForm(index) {
+            $scope.name = $scope.forms[index].name;
+            $scope.currentForm = $scope.forms[index];
         }
     }
-
-    function DeleteForm(index){
-        var form = $scope.forms[index];
-        FormService.deleteFormById(form.id, function(forms){
-            $scope.forms = forms;
-        })
-    }
-
-    function SelectForm(index){
-        $scope.form1 = JSON.parse(JSON.stringify($scope.forms[index]));
-    }
-}
+})();
