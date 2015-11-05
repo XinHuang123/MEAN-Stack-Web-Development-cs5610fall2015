@@ -3,7 +3,7 @@
 (function() {
     angular
         .module("FormBuilderApp")
-        .factory("FormService", FormService);
+        .factory("FormService", FormService);//inside FormService define the service interface
 
     function FormService() {
         var forms = [];

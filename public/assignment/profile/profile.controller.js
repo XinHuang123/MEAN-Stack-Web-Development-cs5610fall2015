@@ -5,6 +5,8 @@
         .controller('ProfileController', ProfileController)
 
     function ProfileController($scope, $rootScope, $location, UserService) {
+        $scope.update = update
+
         var user = $rootScope.user
         if (user) {
             if (user.username) {
@@ -38,6 +40,6 @@
             })
         }
 
-        $scope.update = update
+
     }
 })()

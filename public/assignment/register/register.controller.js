@@ -5,6 +5,10 @@
         .controller('RegisterController', RegisterController)
 
     function RegisterController($scope, $rootScope, $location, UserService) {
+        $scope.login = login;
+        $scope.register = register;
+        $scope.$location = $location;
+
         function login() {
             var user = {
                 username: $scope.username,
@@ -19,7 +23,5 @@
             })
         }
 
-        $scope.login = login
-        $scope.register = login
     }
 })()

@@ -3,7 +3,7 @@
 (function() {
     angular
         .module("FormBuilderApp")
-        .factory("UserService", UserService);
+        .factory("UserService", UserService);//inside UserService define the service interface
 
     function UserService() {
         var users = [];
@@ -47,7 +47,7 @@
 
             if (!usersExists) {
                 user.id = guid();
-                users.push(user);
+                users.push(user);//javascript array has push() method
             }
 
             callback(user);

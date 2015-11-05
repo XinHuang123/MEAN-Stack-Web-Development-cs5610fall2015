@@ -21,5 +21,6 @@
                     }
                 })
         }
+        //scope是html和单个controller之间的桥梁，数据绑定就靠他了。rootscope是各个controller中scope的桥梁。用rootscope定义的值，可以在各个controller中使用
     }
 })();
