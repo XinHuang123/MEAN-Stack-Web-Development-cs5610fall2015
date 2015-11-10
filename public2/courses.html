@@ -1,0 +1,65 @@
+<html ng-app="WhiteBoardApp">
+	<head>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+		    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+			<script src="app.js"></script>
+			<script src="course.service.js"></script>
+	</head>	
+	
+	<body>
+		<div class="container" ng-controller="CourseController">
+			<h1>Courses</h1>			
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Seats</th>
+						<th>Starts</th>
+						<th>&nbsp;</th>
+					</tr>
+				</thead>
+				<body>
+					<tr>
+						<td>
+							<input ng-model="course.title"
+							class="form-control"/>
+						</td>
+						<td>
+							<input ng-model="course.seats"
+							class="form-control"/>
+						</td>
+						<td>
+							<input ng-model="course.start"
+							class="form-control"/>
+						</td>
+						<td>
+							<button ng-show="course"
+							ng-click="updateCourse(course)" 
+							class="btn btn-success">
+								Update
+							</button>
+							<button 
+							ng-click="createCourse(course)"
+							class="btn btn-primary">
+							Add
+							</button>
+						</td>
+					</tr>
+					<tr ng-class="{'success':$index==selectedCourseIndex}"
+					ng-click="selectCourse($index)" ng-repeat="course in courses">
+						<td>{{course.title}}</td>
+						<td>{{course.seats}}</td>
+						<td>{{course.start | date:'short'}}</td>
+						<td>
+							<button ng-click="removeCourse($index)"class="btn btn-danger">Remove</button>
+						</td>		
+					</tr>
+																			
+				</body>
+			</table>
+			
+		</div>		
+	</body>
+	
+</html>

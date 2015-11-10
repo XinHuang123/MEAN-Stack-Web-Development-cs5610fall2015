@@ -48,7 +48,7 @@
             if (!usersExists) {
                 user.id = guid();
                 users.push(user);//javascript array has push() method
-            }
+        }
 
             callback(user);
         }
