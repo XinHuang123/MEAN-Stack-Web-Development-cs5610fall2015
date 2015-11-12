@@ -24,7 +24,7 @@
                         <a ng-click="updateForm()"><span class="sr-only">Update Form</span></a>
                     </td>
                 </tr>
-                <tr ng-repeat="form in forms">
+                <tr ng-repeat="form in forms track by $index">
                     <td>{{ form.name }}</td>
                     <td>
                         <a ng-click="deleteForm($index)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>

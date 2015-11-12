@@ -32,17 +32,17 @@
         init();
 
         function addForm() {
-            var newForm = null;
+            //var newForm = null;
             var form = {
                 "name": $scope.name
             };
 
             FormService.createFormForUser(user.id, form, function(form) {
-                newForm = form;
+                $scope.forms.push(form);
             });
 
-            $scope.forms.push(newForm);
-            $scope.name = null;
+            //$scope.forms.push(newForm);
+            //$scope.name = null;
         }
 
         function updateForm() {
@@ -59,7 +59,6 @@
 
         function deleteForm(index) {
             var formId = $scope.forms[index].id;
-
             FormService.deleteFormById(formId, function(forms) {
                 console.log("Form Deleted");
                 $scope.forms = forms;

@@ -45,7 +45,7 @@
                 if (forms[i].id == formId) {
                  //   console.log("equal");
                     forms.splice(i, 1);
-                    break;
+                    //break;
                 }
             }
             callback(forms);
