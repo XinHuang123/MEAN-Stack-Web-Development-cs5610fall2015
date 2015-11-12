@@ -26,7 +26,7 @@
                     controller: "FormController"
                 })
                 .otherwise({
-                    redirectTo: "home"
+                    redirectTo: "/home"
                 });
 
     }

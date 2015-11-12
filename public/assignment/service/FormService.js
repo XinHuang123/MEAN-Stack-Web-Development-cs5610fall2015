@@ -6,7 +6,9 @@
         .factory("FormService", FormService);//inside FormService define the service interface
 
     function FormService() {
-        var forms = [];
+        var forms = [
+            //{id:123,userid:123},
+        ];
 
         var service = {
             createFormForUser: createFormForUser,
@@ -14,7 +16,6 @@
             deleteFormById: deleteFormById,
             updateFormById: updateFormById
         }
-
         return service;
 
         function createFormForUser(userId, form, callback) {
@@ -40,14 +41,13 @@
 
         function deleteFormById(formId, callback) {
             for (var i = 0; i < forms.length; i++) {
-                console.log(forms[i].id + "  " + formId);
+               // console.log(forms[i].id + "  " + formId);
                 if (forms[i].id == formId) {
-                    console.log("equal");
+                 //   console.log("equal");
                     forms.splice(i, 1);
                     break;
                 }
             }
-
             callback(forms);
         }
 
@@ -57,7 +57,6 @@
                     forms[i] = newForm;
                 }
             }
-
             callback(forms);
         }
 

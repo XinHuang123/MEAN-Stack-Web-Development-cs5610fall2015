@@ -10,14 +10,15 @@
 
         function login(){
             UserService.findUserByUsernameAndPassword(
-                $scope.userName,
+                $scope.username,
                 $scope.password,
+                //callback
                 function(user){
                     if(user != null){
                         $rootScope.currentUser = user;
-                        $location.url('/profile');
+                        $location.path('/profile');
                     }else{
-                        $location.url('/register');
+                        $location.path('/register');
                     }
                 })
         }

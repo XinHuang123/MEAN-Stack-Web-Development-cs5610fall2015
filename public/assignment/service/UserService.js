@@ -6,28 +6,29 @@
         .factory("UserService", UserService);//inside UserService define the service interface
 
     function UserService() {
-        var users = [];
+        var users = [
+
+            //{username:"Xin Huang", password:"123456",id:123},
+        ];
 
         var service = {
-            findUserByNameAndPassword: findUserByNameAndPassword,
+            findUserByUsernameAndPassword: findUserByUsernameAndPassword,
             findAllUsers: findAllUsers,
             createUser: createUser,
             deleteUserById: deleteUserById,
             updateUser: updateUser
         }
-
         return service;
 
-        function findUserByNameAndPassword(userName, password, callback) {
+        function findUserByUsernameAndPassword(username, password, callback) {
             var currentUser = null;
             for (var i = 0; i < users.length; i++) {
-                if ((users[i].userName == userName) && (users[i].password == password)) {
+                if ((users[i].username == username) && (users[i].password == password)) {
                     currentUser = users[i];
                     callback(currentUser);
                 }
             }
             callback(null);
-
         }
 
         function findAllUsers(callback) {
@@ -38,8 +39,8 @@
             var usersExists = false;
 
             for (var i = 0; i < users.length; i++) {
-                if (users[i].userName === user.userName) {
-                    console.log("User name already exists");
+                if (users[i].username == user.username) {
+                    //console.log("User name already exists");
                     usersExists = true;
                     callback(null);
                 }
@@ -49,7 +50,6 @@
                 user.id = guid();
                 users.push(user);//javascript array has push() method
         }
-
             callback(user);
         }
 
@@ -57,7 +57,7 @@
             var index = null;
 
             for (var i = 0; i < users.length; i++) {
-                if (users[i].id === userId) {
+                if (users[i].id ==userId) {
                     index = i;
                     break;
                 }
@@ -70,7 +70,7 @@
 
         function updateUser(userId, user, callback) {
             for (var i = 0; i < users.length; i++) {
-                if (users[i].id === userId) {
+                if (users[i].id ==userId) {
                     users[i] = user;
                 }
             }
@@ -86,5 +86,6 @@
             return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
                 s4() + '-' + s4() + s4() + s4();
         }
+
     }
 })();

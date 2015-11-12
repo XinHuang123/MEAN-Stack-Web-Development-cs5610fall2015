@@ -4,10 +4,10 @@
         .module('FormBuilderApp')
         .controller('ProfileController', ProfileController)
 
-    function ProfileController($scope, $rootScope, $location, UserService) {
+    function ProfileController($scope, $rootScope, UserService) {
         $scope.update = update
 
-        var user = $rootScope.user
+        var user = $rootScope.currentUser
         if (user) {
             if (user.username) {
                 $scope.username = user.username
@@ -36,7 +36,7 @@
             }
 
             UserService.updateUser(user.id, newUser, function(user) {
-                $rootScope.user = user
+                $rootScope.currentuser = user
             })
         }
 

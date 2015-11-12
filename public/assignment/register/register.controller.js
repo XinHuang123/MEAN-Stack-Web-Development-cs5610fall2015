@@ -5,11 +5,11 @@
         .controller('RegisterController', RegisterController)
 
     function RegisterController($scope, $rootScope, $location, UserService) {
-        $scope.login = login;
+        //$scope.login = login;
         $scope.register = register;
         $scope.$location = $location;
 
-        function login() {
+        function register() {
             var user = {
                 username: $scope.username,
                 password: $scope.password,
@@ -17,7 +17,7 @@
             }
             UserService.createUser(user, function (user) {
                 if (user) {
-                    $rootScope.user = user
+                    $rootScope.newuser= user
                     $location.path('/profile')
                 }
             })
