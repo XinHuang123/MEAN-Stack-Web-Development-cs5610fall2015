@@ -24,26 +24,26 @@
 
     <script src="app.js"></script>
     <script src="config.js"></script>
-    <script src="header/header.controller.js"></script>
-    <script src="sidebar/sidebar.controller.js"></script>
+    <script src="views/header/header.controller.js"></script>
+    <script src="views/sidebar/sidebar.controller.js"></script>
     <script src="service/UserService.js"></script>
     <script src="service/FormService.js"></script>
-    <script src="login/login.controller.js"></script>
-    <script src="register/register.controller.js"></script>
-    <script src="profile/profile.controller.js"></script>
-    <script src="form/form.controller.js"></script>
+    <script src="views/login/login.controller.js"></script>
+    <script src="views/register/register.controller.js"></script>
+    <script src="views/profile/profile.controller.js"></script>
+    <script src="views/form/form.controller.js"></script>
 
 </head>
 
 <body>
 
 <!--ng-include 将多个页面的公共页面提取出来-->
-<nav class="navbar navbar-inverse navbar-fixed-top" ng-include="'header/header.view.html'" ng-controller="HeaderController">
+<nav class="navbar navbar-inverse navbar-fixed-top" ng-include="'views/header/header.view.html'" ng-controller="HeaderController">
 </nav>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar" ng-include="'sidebar/sidebar.view.html'" ng-controller="SidebarController">
+        <div class="col-sm-3 col-md-2 sidebar" ng-include="'views/sidebar/sidebar.view.html'" ng-controller="SidebarController">
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view>
         </div>

@@ -42,7 +42,7 @@
             });
 
             //$scope.forms.push(newForm);
-            //$scope.name = null;
+            $scope.name = null;
         }
 
         function updateForm() {
