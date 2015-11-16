@@ -1,55 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="FormBuilderApp">
 <head>
+    <title>Assignment-4</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Form Maker</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-    <!-- jquery CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-    <!-- angularjs CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.min.js"></script>
-
-
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="css/styles.css">
-
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="config.js"></script>
+    <script src="services/UserService.js"></script>
+    <script src="services/FormService.js"></script>
+    <script src="services/FieldService.js"></script>
     <script src="views/header/header.controller.js"></script>
     <script src="views/sidebar/sidebar.controller.js"></script>
-    <script src="service/UserService.js"></script>
-    <script src="service/FormService.js"></script>
     <script src="views/login/login.controller.js"></script>
-    <script src="views/register/register.controller.js"></script>
     <script src="views/profile/profile.controller.js"></script>
+    <script src="views/register/register.controller.js"></script>
     <script src="views/form/form.controller.js"></script>
-
+    <script src="views/field/field.controller.js"></script>
 </head>
-
 <body>
-
-<!--ng-include 将多个页面的公共页面提取出来-->
-<nav class="navbar navbar-inverse navbar-fixed-top" ng-include="'views/header/header.view.html'" ng-controller="HeaderController">
-</nav>
-
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar" ng-include="'views/sidebar/sidebar.view.html'" ng-controller="SidebarController">
+       <div class="col-sm-12">
+            <div ng-include src="'views/header/header.view.html'"></div>
+            <div ng-include src="'views/sidebar/sidebar.view.html'"></div>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view>
+    </div>
+    <div class="row">
+        <div class="col-sm-12" ng-view>
         </div>
     </div>
 </div>
-
 </body>
-
 </html>

@@ -1,45 +1,34 @@
-"use strict";
-(function() {
+(function(){
+    'use strict';
     angular
-        .module('FormBuilderApp')
-        .controller('ProfileController', ProfileController)
+        .module("FormBuilderApp")
+        .controller("ProfileController", ProfileController);
 
-    function ProfileController($scope, $rootScope, UserService) {
-        $scope.update = update
+    function ProfileController(UserService, $rootScope) {
+        var model = this;
+        model.update = update;
 
-        var user = $rootScope.currentUser
-        if (user) {
-            if (user.username) {
-                $scope.username = user.username
-            }
-            if (user.password) {
-                $scope.password = user.password
-            }
-            if (user.firstName) {
-                $scope.firstName = user.firstName
-            }
-            if (user.lastName) {
-                $scope.lastName = user.lastName
-            }
-            if (user.email) {
-                $scope.email = user.email
-            }
+        model.username = $rootScope.curusername;
+        model.pwd = $rootScope.curpwd;
+        model.email = $rootScope.curemail;
+        model.firstname = $rootScope.firstname;
+        model.lastname = $rootScope.lastname;
+
+        function update(){
+            var userobj = {username: model.username, password: model.pwd, id: $rootScope.curid,
+            email: model.email, firstName: model.firstname, lastName: model.lastname};
+
+            UserService.updateUser($rootScope.curid, userobj)
+                        .then(function(user){
+                            if(user != null) {
+                                $rootScope.curusername = user.username;
+                                $rootScope.curpwd = user.password;
+                                $rootScope.curid = user.id;
+                                $rootScope.curemail = user.email;
+                                $rootScope.firstname = user.firstName;
+                                $rootScope.lastname = user.lastName;
+                            }
+                        });
         }
-
-        function update() {
-            var newUser = {
-                username: $scope.username,
-                password: $scope.password,
-                firstName: $scope.firstName,
-                lastName: $scope.lastName,
-                email: $scope.email
-            }
-
-            UserService.updateUser(user.id, newUser, function(user) {
-                $rootScope.currentuser = user
-            })
-        }
-
-
     }
-})()
+})();

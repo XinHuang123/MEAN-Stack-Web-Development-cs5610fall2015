@@ -1,66 +1,96 @@
-"use strict";
+var users = require('../models/user.mock.json');
+var q = require("q");
 
-var users=require("./user.mock.json");
-var uuid = require('node-uuid');
+module.exports = function(app) {
 
-module.exports=function(app){
-    var api={
-        Create: Create,
-        FindAll: FindAll,
-        FindById: FindById,
-        FindUserByUsername: FindUserByUsername,
-        FindUserByCredentials: FindUserByCredentials,
-        Update: Update,
-        Delete: Delete
-    };
-    return api;
+    var api = {
+            findUserById : findUserById,
+            findUserByUsername : findUserByUsername,
+            findUserByCredentials : findUserByCredentials,
+            findAllUsers: findAllUsers,
+            deleteUser : deleteUser,
+            addNewUser : addNewUser,
+            updateUser: updateUser
+        };
+        return api;
 
-    function Create(user){
-        user.id=uuid.v4();// Generate a v4 (random) id
-        users.push(user);
-        return user;
-    }
+        function findUserById(userId) {
 
-    function FindAll(){
-        return users;
-    }
-
-    function FindUserByUsername(username) {
-        return users.find(function(element, index, array) {
-            return element.username === username;
-        });
-    }
-
-    function FindUserByCredentials(credentials){
-        return users.find(function(element,index,array){
-            return element.username==credentials.username&&item.password==credentials.password;
-        });
-    }
-
-
-    function Update(id,newUser){
-        var user=FindById(id);
-        for(var k in newUser){
-            user[k]=newUser[k];
+            var deferred = q.defer();
+            for(var user in users) {
+                if(users[user].id.localeCompare(userId) == 0) {
+                    deferred.resolve(users[user]);
+                }
+            }
+            return deferred.promise;
         }
-        return user;
-    }
 
-    function Delete(id){
-        var index=FindById(id);
-        if(index!=-1){
-            users.splice(index,1);
+        function findUserByCredentials(credentials) {
+
+            var deferred = q.defer();
+            for(var user in users) {
+                if(users[user].username.localeCompare(credentials.username) == 0 &&
+                   users[user].password.localeCompare(credentials.password) == 0) {
+                    deferred.resolve(users[user]);
+                }
+            }
+            return deferred.promise;
         }
-        return users;
 
-    }
+        function findUserByUsername(username) {
 
-    function FindById(id) {
-        return users.find(function(element, index, array) {
-            return element.id === id;
-        });
-    }
+            var deferred = q.defer();
+            for(var user in users) {
+                if(users[user].username.localeCompare(username) == 0) {
+                    deferred.resolve(users[user]);
+                }
+            }
+            return deferred.promise;
+        }
 
+        function findAllUsers() {
 
+            var deferred = q.defer();
+            deferred.resolve(users);
+            return deferred.promise;
+        }
 
-}
+        function deleteUser(userId) {
+
+            var deferred = q.defer();
+            for(var user in users) {
+                if(users[i].id == userId) {
+                    users.splice(user, 1);
+                    deferred.resolve(users);
+                }
+            }
+            return deferred.promise;
+        }
+
+        function addNewUser(newUser) {
+
+            var deferred = q.defer();
+            var newUser = newUser;
+            console.log(newUser);
+            users.push(newUser);
+            deferred.resolve(newUser);
+            return deferred.promise;
+        }
+
+        function updateUser(userId, userObj) {
+
+            var deferred = q.defer();
+            for(var i = 0; i < users.length; i++)  {
+            console.log(users[i].id);
+                if(users[i].id == userId) {
+                    users[i].username = userObj.username;
+                    users[i].password = userObj.password;
+                    users[i].firstName = userObj.firstName;
+                    users[i].lastName = userObj.lastName;
+                    deferred.resolve(users[i]);
+                }
+            }
+            return deferred.promise;
+        }
+};
+

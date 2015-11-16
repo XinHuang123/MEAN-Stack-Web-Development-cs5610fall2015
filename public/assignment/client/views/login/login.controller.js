@@ -1,27 +1,29 @@
-"use strict";
 (function(){
+    'use strict';
     angular
         .module("FormBuilderApp")
         .controller("LoginController", LoginController);
 
-    function LoginController($scope, $rootScope, $location, UserService){
-        $scope.login = login;
-        $scope.$location = $location;
+    function LoginController(UserService, $rootScope, $location) {
+        var model = this;
+        model.login = login;
 
-        function login(){
-            UserService.findUserByUsernameAndPassword(
-                $scope.username,
-                $scope.password,
-                //callback
-                function(user){
-                    if(user != null){
-                        $rootScope.currentUser = user;
-                        $location.path('/profile');
-                    }else{
-                        $location.path('/register');
-                    }
-                })
-        }
-        //scope是html和单个controller之间的桥梁，数据绑定就靠他了。rootscope是各个controller中scope的桥梁。用rootscope定义的值，可以在各个controller中使用
+        function login() {
+            var username = model.username;
+            var pwd = model.pwd;
+            UserService.findUserByUsernameAndPassword(username, pwd)
+                        .then(function(user){
+                         if (user != null) {
+                                $rootScope.curusername = user.username;
+                                $rootScope.curpwd = user.password;
+                                $rootScope.curid = user.id;
+                                $rootScope.curemail = user.email;
+                                $rootScope.firstname = user.firstName;
+                                $rootScope.lastname = user.lastName;
+                                $location.url("/profile");
+                                }
+                            }
+                        )};
+
     }
 })();

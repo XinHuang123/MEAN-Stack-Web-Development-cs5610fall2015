@@ -1,60 +1,87 @@
-"use strict";
+var model = require("../models/user.model.js")();
 
-module.exports=function(app, userModel){
+module.exports = function(app) {
+    app.get("/api/assignment/user/username=:username&password=:password", findUserByUsernameAndPassword);
+    app.get("/api/assignment/user", findAllUsers);
+    app.get("/api/assignment/user/:id", findUserById);
+    app.post("/api/assignment/user", addNewUser);
+    app.put("/api/assignment/user/:id", updateUser);
+    app.delete("/api/assignment/user/:id", deleteUser);
+    app.get("/api/assignment/user/username=:username", findUserByUsername);
 
-//creates a new user embedded in the body of the request, and responds with an array of all users
-    app.post("/api/assignment/user",function(req,res)
-    {
-        var newUser=req.body;
-        res.json(userModel.Create(newUser));
-    });
+    function findAllUsers(req, res) {
+    console.log("Inside findAllUsers!");
+        model
+            .findAllUsers()
+            .then(function(users){
+                res.json(users);
+            });
+    }
 
-//responds with an array of all users
-    app.get("/api/assignment/user",function(req,res)
-    {
-        res.json(userModel.FindAll());
-    });
+    function findUserByUsername(req, res) {
+        console.log("Inside server side findUserByUsername");
+        var username = req.params.username;
+        model
+            .findUserByUsername(username)
+            .then(function(user){
+                res.json(user);
+            });
+    }
 
-//responds with a single user whose id property is equal to the id path parameter
-    app.get("/api/assignment/user/:id",function(req,res)
-    {
-        res.json(userModel.FindById(req.params["id"]));
-    });
+    function findUserByUsernameAndPassword(req, res) {
+    console.log("Inside server side findUserByUsernameAndPassword");
+        var username = req.params.username;
+        var pwd = req.params.password;
+        var credentials = {
+            username: username,
+            password: pwd
+        };
+        model
+            .findUserByCredentials(credentials)
+            .then(function(user){
+                res.json(user);
+            });
+    }
 
-//responds with a single user whose username property is equal to the username path parameter
-/*
-    app.get("/api/assignment/user?username=username",function(req,res)
-    {
-        res.json(model.FindAll());
-    });
-*/
-    //?username=username
-    app.get('/api/assignment/user', function(req, res) {
-        var username = req.param('username');
-        var password = req.param('password');
+    function addNewUser(req, res) {
+        console.log("Inside server side addNewUser");
+        var user = req.body;
+        model
+            .addNewUser(user)
+            .then(function(users){
+                res.json(users);
+            });
+    }
 
-        if(username == null && password == null) {
-            res.json(userModel.FindAll());
-        } else if (password == null) {
-            res.json(userModel.FindUserByUsername(username));
-        } else {
-            res.json(userModel.FindUserByCredentials({
-                username: username,
-                password: password
-            }));
-        }
-    });
-//updates an existing user whose id property is equal to the id path parameter.
-// The new properties are set to the values in the user object embedded in the HTTP request.
-// Responds with an array of all users
-    app.put("/api/assignemnt/user/:id",function(req,res)
-    {
-       res.json(userModel.Update(req.params["id"],req.body));
-    });
+    function findUserById(req, res){
+        console.log("Inside server side findUserById");
+        var userId = req.params.id;
+        model
+            .findUserById(userId)
+            .then(function(user){
+                res.json(user);
+            });
+    }
 
-//removes an existing user whose id property is equal to the id path parameter.
-// Responds with an array of all users
-    app.delete("/api/assignment/user/:id",function(req,res){
-        res.json(userModel.Delete(req.params["id"]));
-    });
+    function updateUser(req, res) {
+    console.log("Inside server side updateUser");
+    var userId = req.params.id;
+    var userObj = req.body;
+        model
+            .updateUser(userId, userObj)
+            .then(function(user){
+                res.json(user);
+            });
+    }
+
+    function deleteUser(req, res) {
+    console.log("Inside server side deleteUser");
+    var userId = req.params.id;
+        model
+            .deleteUser(userId)
+            .then(function(users){
+                res.json(users);
+            });
+    }
+
 };

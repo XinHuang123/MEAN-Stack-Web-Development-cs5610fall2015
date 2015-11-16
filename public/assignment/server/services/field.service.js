@@ -1,31 +1,65 @@
-"use strict";
+var model = require("../models/form.model.js")();
 
-module.exports = function(app, formModel) {
-    app.get('/api/assignment/form/:formId/field', function(req, res) {
-        res.json(formModel.FindById(req.params.formId).fields);
-    });
+module.exports = function(app) {
+    app.post("/api/assignment/form/:formId/field", createNewFieldForFormId);
+    app.put("/api/assignment/form/:formId/field/:fieldId", updateFieldForFormId);
+    app.delete("/api/assignment/form/:formId/field/:fieldId", deleteFieldByFormIdAndFieldId);
+    app.get("/api/assignment/form/:formId/field/:fieldId", findFieldByFormIdAndFieldId);
+    app.get("/api/assignment/form/:formId/field", findAllFieldsForFormId);
 
-    app.get('/api/assignment/form/:formId/field/:fieldId',
-        function(req, res){
-            res.json(formModel.FindFieldById(req.params.formId, req.params.fieldId));
-        });
+    function createNewFieldForFormId(req, res) {
+        console.log("Inside server side createNewFieldForFormId - fields");
+        var formId = req.params.formId;
+        var fieldObj = req.body;
+        model
+            .createNewFieldForFormId(formId, fieldObj)
+            .then(function(form){
+                res.json(form);
+            });
+    }
 
-    app.delete('/api/assignment/form/:formId/field/:fieldId',
-        function(req, res) {
-            // return fields array
-            res.json(formModel.RemoveField(req.params.formId, req.params.fieldId));
-        });
+    function findAllFieldsForFormId(req, res){
+        console.log("Inside server side findAllFieldsForFormId - fields");
+        var formId = req.params.formId;
+        model
+            .findAllFieldsForFormId(formId)
+            .then(function(fields){
+                res.json(fields);
+            });
+    }
 
-    app.post('/api/assignment/form/:formId/field', function(req, res) {
-        // return fields array
-        res.json(formModel.AddField(req.params.formId, req.body));
-    });
+    function findFieldByFormIdAndFieldId(req, res){
+        console.log("Inside server side findFieldByFormIdAndFieldId - fields");
+        var formId = req.params.formId;
+        var fieldId = req.params.fieldId;
+        model
+            .findFieldByFormIdAndFieldId(fieldId, formId)
+            .then(function(field){
+                res.json(field);
+            });
+    }
 
-    app.put('/api/assignment/form/:formId/field/:fieldId',
-        function(req, res) {
-            res.json(formModel.UpdateField(
-                req.params.formId,
-                req.params.fieldId,
-                req.body));
-        });
-}
+    function updateFieldForFormId(req, res) {
+    console.log("Inside server side updateForm - forms");
+    var formId = req.params.formId;
+    var fieldId = req.params.fieldId;
+    var fieldObj = req.body;
+        model
+            .updateFieldForFormId(fieldId, formId, fieldObj)
+            .then(function(form){
+                res.json(form);
+            });
+    }
+
+    function deleteFieldByFormIdAndFieldId(req, res) {
+    console.log("Inside server side deleteForm - forms");
+    var formId = req.params.formId;
+    var fieldId = req.params.fieldId;
+        model
+            .deleteFieldByFormIdAndFieldId(fieldId, formId)
+            .then(function(form){
+                res.json(form);
+            });
+    }
+
+};
