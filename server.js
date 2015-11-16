@@ -12,8 +12,10 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(multer());//for parsing multipart/form-data
 
-require("./public/assignment/server/services/user.service.js")(app);
-require("./public/assignment/server/services/form.service.js")(app);
-require("./public/assignment/server/services/field.service.js")(app);
+//require("./public/assignment/server/services/user.service.js")(app);
+//require("./public/assignment/server/services/form.service.js")(app);
+//require("./public/assignment/server/services/field.service.js")(app);
+require("./public/assignment/server/app.js")(app);
+
 
 app.listen(port,ipaddress);
