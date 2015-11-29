@@ -1,16 +1,14 @@
-var model = require("../models/user.model.js")();//require usermodel`s API
-
-module.exports = function(app) {
+module.exports = function(app, model) {
     app.get("/api/assignment/user/username=:username&password=:password", findUserByUsernameAndPassword);
     app.get("/api/assignment/user", findAllUsers);
-    app.get("/api/assignment/user/:id", findUserById);//path on the server side
+    app.get("/api/assignment/user/:id", findUserById);
     app.post("/api/assignment/user", addNewUser);
     app.put("/api/assignment/user/:id", updateUser);
     app.delete("/api/assignment/user/:id", deleteUser);
     app.get("/api/assignment/user/username=:username", findUserByUsername);
 
     function findAllUsers(req, res) {
-    console.log("Inside server side findAllUsers!");
+    console.log("Inside findAllUsers!");
         model
             .findAllUsers()
             .then(function(users){
@@ -39,6 +37,7 @@ module.exports = function(app) {
         model
             .findUserByCredentials(credentials)
             .then(function(user){
+                console.log(user);
                 res.json(user);
             });
     }
@@ -70,6 +69,7 @@ module.exports = function(app) {
         model
             .updateUser(userId, userObj)
             .then(function(user){
+                console.log("Updated user: " + user);
                 res.json(user);
             });
     }

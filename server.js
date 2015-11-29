@@ -1,4 +1,3 @@
-
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -15,7 +14,13 @@ app.use(multer());//for parsing multipart/form-data
 //require("./public/assignment/server/services/user.service.js")(app);
 //require("./public/assignment/server/services/form.service.js")(app);
 //require("./public/assignment/server/services/field.service.js")(app);
-require("./public/assignment/server/app.js")(app);
+
+
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/cs5610');//connect to database
+var db = mongoose.connection;
+
+require("./public/assignment/server/app.js")(app, db, mongoose);
 
 
 app.listen(port,ipaddress);

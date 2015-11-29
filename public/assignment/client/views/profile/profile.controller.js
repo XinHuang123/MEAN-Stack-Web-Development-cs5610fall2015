@@ -21,9 +21,11 @@
             UserService.updateUser($rootScope.curid, userobj)
                         .then(function(user){
                             if(user != null) {
+                                console.log("user : " + user);
+                                console.log("Updated username: " + user.username);
                                 $rootScope.curusername = user.username;
                                 $rootScope.curpwd = user.password;
-                                $rootScope.curid = user.id;
+                                $rootScope.curid = user._id;
                                 $rootScope.curemail = user.email;
                                 $rootScope.firstname = user.firstName;
                                 $rootScope.lastname = user.lastName;

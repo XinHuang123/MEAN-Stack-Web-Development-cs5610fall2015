@@ -29,8 +29,8 @@
             var id = uniqueIdForm();
             form.id = id;
             $http.post("/api/assignment/user/" + userId + "/form", form)
-                .success(function(response){
-                    deferred.resolve(response);
+                .success(function(forms){
+                    deferred.resolve(forms);
                 });
 
             return deferred.promise;
@@ -39,8 +39,8 @@
         function findAllFormsForUser(userId) {
             var deferred = $q.defer();
             $http.get("/api/assignment/user/" + userId + "/form")
-                .success(function(response){
-                    deferred.resolve(response);
+                .success(function(forms){
+                    deferred.resolve(forms);
                 });
 
             return deferred.promise;
@@ -50,8 +50,8 @@
         function getFormById(formId) {
             var deferred = $q.defer();
             $http.get("/api/assignment/form/" + formId)
-                .success(function(response){
-                    deferred.resolve(response);
+                .success(function(form){
+                    deferred.resolve(form);
                 });
 
             return deferred.promise;
@@ -61,8 +61,8 @@
         function deleteFormById(formId) {
             var deferred = $q.defer();
             $http.delete("/api/assignment/form/"+ formId)
-                .success(function(response){
-                    deferred.resolve(response);
+                .success(function(forms){
+                    deferred.resolve(forms);
                 });
 
             return deferred.promise;
@@ -73,8 +73,8 @@
             var deferred = $q.defer();
 
             $http.put("/api/assignment/form/" + formId, newForm)
-                .success(function(response){
-                    deferred.resolve(response);
+                .success(function(form){
+                    deferred.resolve(form);
                 });
 
             return deferred.promise;

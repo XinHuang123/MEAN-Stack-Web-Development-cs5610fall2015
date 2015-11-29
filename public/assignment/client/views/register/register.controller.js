@@ -5,11 +5,11 @@
              .controller("RegisterController", RegisterController);
 
          function RegisterController(UserService, $location, $rootScope) {
-            var model = this;//no need to use $scope, view can see model.getAllUsers and model.register
+            var model = this;
             model.getAllUsers = getAllUsers;
             model.register = register;
 
-            function init() {
+           function init() {
                UserService.findAllUsers()
                            .then(function(users){
                                model.allUsers = users;
