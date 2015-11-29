@@ -1,16 +1,16 @@
-var model = require("../models/user.model.js")();
+var model = require("../models/user.model.js")();//require usermodel`s API
 
 module.exports = function(app) {
     app.get("/api/assignment/user/username=:username&password=:password", findUserByUsernameAndPassword);
     app.get("/api/assignment/user", findAllUsers);
-    app.get("/api/assignment/user/:id", findUserById);
+    app.get("/api/assignment/user/:id", findUserById);//path on the server side
     app.post("/api/assignment/user", addNewUser);
     app.put("/api/assignment/user/:id", updateUser);
     app.delete("/api/assignment/user/:id", deleteUser);
     app.get("/api/assignment/user/username=:username", findUserByUsername);
 
     function findAllUsers(req, res) {
-    console.log("Inside findAllUsers!");
+    console.log("Inside server side findAllUsers!");
         model
             .findAllUsers()
             .then(function(users){

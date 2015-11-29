@@ -60,7 +60,7 @@
 
         function findUserByUsernameAndPassword(username, password) {
             var deferred = $q.defer();
-            $http.get("/api/assignment/user/username=" + username + "&password=" + password)
+            $http.get("/api/assignment/user/username=" + username + "&password=" + password)//query form the client side
                 .success(function(response){
                     console.log("inside client side" + response);
                     deferred.resolve(response);
