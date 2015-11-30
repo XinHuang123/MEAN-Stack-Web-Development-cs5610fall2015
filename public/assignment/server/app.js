@@ -1,6 +1,6 @@
 module.exports = function(app, db, mongoose) {
 
-    var model = require("./models/user.model.js") (mongoose, db);
+    var model = require("./models/user.model.js") (mongoose, db);//pass mongoose and db
     require("./services/user.service.js")(app, model);
 
     var formModel = require("./models/form.model.js") (mongoose, db);

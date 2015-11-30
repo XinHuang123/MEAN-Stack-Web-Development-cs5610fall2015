@@ -16,11 +16,11 @@ app.use(multer());//for parsing multipart/form-data
 //require("./public/assignment/server/services/field.service.js")(app);
 
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/cs5610');//connect to database
-var db = mongoose.connection;
+var mongoose = require('mongoose');//mongoose is an api which allows us to create schema.....
+mongoose.connect('mongodb://localhost/cs5610');//connect to database cs5610
+var db = mongoose.connection;//connection
 
-require("./public/assignment/server/app.js")(app, db, mongoose);
+require("./public/assignment/server/app.js")(app, db, mongoose);//pass db and mongoose to app
 
 
 app.listen(port,ipaddress);
