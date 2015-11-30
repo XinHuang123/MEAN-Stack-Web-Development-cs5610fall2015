@@ -34,7 +34,7 @@
                                         if(user != null) {
                                             $rootScope.curusername = user.username;
                                             $rootScope.curpwd = user.password;
-                                            $rootScope.curid = user.id;
+                                            $rootScope.curid = user._id;
                                             $rootScope.curemail = user.email;
                                             $location.url("/profile");
                                         }

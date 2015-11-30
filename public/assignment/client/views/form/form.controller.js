@@ -11,9 +11,10 @@
             model.updateForm = updateForm;
             model.deleteForm = deleteForm;
             model.selectForm = selectForm;
+            model.forms = [];
 
             function init() {
-            console.log("insdie form controller" + $rootScope.curid);
+            console.log("inside form controller" + $rootScope.curid);
              FormService.findAllFormsForUser($rootScope.curid)
                         .then(function(forms){
                             model.forms = forms;
@@ -31,26 +32,32 @@
              }
 
              function updateForm() {
-                var newForm = { id : model.currentForm.id, title : model.title};
-                 FormService.updateFormById(model.currentForm.id, newForm)
+                var newForm = { title : model.title, userId: $rootScope.curid};
+                console.log(newForm.title + " " + newForm._id);
+                 FormService.updateFormById(model.currentForm._id, newForm)
                             .then(function(forms){
+                                console.log("Updated Form-title: " + forms[0].title);
                                 model.forms= forms;
                             });
              }
 
 
              function deleteForm(formId) {
+                console.log("Form to delete: " + formId);
                  FormService.deleteFormById(formId)
                             .then(function(forms){
                             console.log(forms);
-                                model.forms = forms;
+                            FormService.findAllFormsForUser($rootScope.curid)
+                                    .then(function(forms){
+                                        model.forms = forms;
+                                    });
                             });
              }
 
              function selectForm(formId) {
                   FormService.getFormById(formId)
                               .then(function(form){
-                              console.log(form.title);
+                              console.log(form.title + " " + form._id);
                                   model.title = form.title;
                                   model.currentForm = form;
                               });

@@ -7,7 +7,7 @@
     <br>
     <div class="form-horizontal">
         <div ng-repeat="field in model.fields">
-            <div ng-switch on="field.type">
+            <div ng-switch on="field.fieldType">
                 <div ng-switch-when="TEXTAREA">
                     <div class="form-group col-lg-12">
                         <label for="txtarea">{{field.label}}</label>
@@ -16,7 +16,7 @@
                         <div class="allicons">
                             <span class="btn btn-warning glyphicon glyphicon-pencil" aria-hidden="true"></span>
                             <span class="btn btn-primary glyphicon glyphicon-plus" aria-hidden="true"></span>
-                            <span class="btn btn-danger glyphicon glyphicon-remove" ng-click="model.removeField(field.id)" aria-hidden="true"></span>
+                            <span class="btn btn-danger glyphicon glyphicon-remove" ng-click="model.removeField(field._id)" aria-hidden="true"></span>
                             <span class="btn btn-success glyphicon glyphicon-align-justify" aria-hidden="true"></span>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                         <div class="allicons">
                             <span class="btn btn-warning glyphicon glyphicon-pencil" aria-hidden="true"></span>
                             <span class="btn btn-primary glyphicon glyphicon-plus" aria-hidden="true"></span>
-                            <span class="btn btn-danger glyphicon glyphicon-remove" ng-click="model.removeField(field.id)" aria-hidden="true"></span>
+                            <span class="btn btn-danger glyphicon glyphicon-remove" ng-click="model.removeField(field._id)" aria-hidden="true"></span>
                             <span class="btn btn-success glyphicon glyphicon-align-justify" aria-hidden="true"></span>
                         </div>
                     </div>
@@ -42,13 +42,13 @@
                         <div class="allicons">
                             <span class="btn btn-warning glyphicon glyphicon-pencil" aria-hidden="true"></span>
                             <span class="btn btn-primary glyphicon glyphicon-plus" aria-hidden="true"></span>
-                            <span class="btn btn-danger glyphicon glyphicon-remove" ng-click="model.removeField(field.id)" aria-hidden="true"></span>
+                            <span class="btn btn-danger glyphicon glyphicon-remove" ng-click="model.removeField(field._id)" aria-hidden="true"></span>
                             <span class="btn btn-success glyphicon glyphicon-align-justify" aria-hidden="true"></span>
                         </div>
                     </div>
                 </div>
-                <div ng-switch-when="OPTIONS">
-                    <div class="form-group col-lg-10">
+                <div ng-switch-when="SELECT">
+                    <div class="form-group col-lg-12">
                         <label for="dropd">{{field.label}}</label>
                         <br>
                         <select id="dropd" class="form-control col-lg-10">
@@ -59,13 +59,13 @@
                         <div class="allicons">
                             <span class="btn btn-warning glyphicon glyphicon-pencil" aria-hidden="true"></span>
                             <span class="btn btn-primary glyphicon glyphicon-plus" aria-hidden="true"></span>
-                            <span class="btn btn-danger glyphicon glyphicon-remove" ng-click="model.removeField(field.id)" aria-hidden="true"></span>
+                            <span class="btn btn-danger glyphicon glyphicon-remove" ng-click="model.removeField(field._id)" aria-hidden="true"></span>
                             <span class="btn btn-success glyphicon glyphicon-align-justify" aria-hidden="true"></span>
                         </div>
                     </div>
                 </div>
-                <div ng-switch-when="CHECKBOXES">
-                    <div class="form-group">
+                <div ng-switch-when="CHECKBOX">
+                    <div class="form-group col-lg-12">
                         <label for="rolesbox">{{field.label}}</label>
                         <br>
                         <div class="checkbox" id="rolesbox" ng-repeat="option in field.options">
@@ -74,13 +74,13 @@
                         <div class="allicons">
                             <span class="btn btn-warning glyphicon glyphicon-pencil" aria-hidden="true"></span>
                             <span class="btn btn-primary glyphicon glyphicon-plus" aria-hidden="true"></span>
-                            <span class="btn btn-danger glyphicon glyphicon-remove" ng-click="model.removeField(field.id)" aria-hidden="true"></span>
+                            <span class="btn btn-danger glyphicon glyphicon-remove" ng-click="model.removeField(field._id)" aria-hidden="true"></span>
                             <span class="btn btn-success glyphicon glyphicon-align-justify" aria-hidden="true"></span>
                         </div>
                     </div>
                 </div>
-                <div ng-switch-when="RADIOS">
-                    <div class="form-group">
+                <div ng-switch-when="RADIO">
+                    <div class="form-group col-lg-12">
                         <label for="radiobtn">{{field.label}}</label>
                         <div class="radio" id="radiobtn" ng-repeat="option in field.options">
                             <label>
@@ -90,7 +90,7 @@
                         <div class="allicons">
                             <span class="btn btn-warning glyphicon glyphicon-pencil" aria-hidden="true"></span>
                             <span class="btn btn-primary glyphicon glyphicon-plus" aria-hidden="true"></span>
-                            <span class="btn btn-danger glyphicon glyphicon-remove" ng-click="model.removeField(field.id)" aria-hidden="true"></span>
+                            <span class="btn btn-danger glyphicon glyphicon-remove" ng-click="model.removeField(field._id)" aria-hidden="true"></span>
                             <span class="btn btn-success glyphicon glyphicon-align-justify" aria-hidden="true"></span>
                         </div>
                     </div>

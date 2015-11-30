@@ -50,6 +50,7 @@ module.exports = function(app, model) {
     function updateForm(req, res) {
     console.log("Inside server side updateForm - forms");
     var formId = req.params.formId;
+    console.log("Inside update form.service.js: " + formId);
     var formObj = req.body;
         model
             .updateForm(formId, formObj)
@@ -61,6 +62,7 @@ module.exports = function(app, model) {
     function deleteForm(req, res) {
     console.log("Inside server side deleteForm - forms");
     var formId = req.params.formId;
+    console.log(formId);
         model
             .deleteForm(formId)
             .then(function(forms){

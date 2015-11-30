@@ -1,6 +1,6 @@
-var model = require("../models/form.model.js")();
+//var model = require("../models/form.model.js")();
 
-module.exports = function(app) {
+module.exports = function(app, model) {
     app.post("/api/assignment/form/:formId/field", createNewFieldForFormId);
     app.put("/api/assignment/form/:formId/field/:fieldId", updateFieldForFormId);
     app.delete("/api/assignment/form/:formId/field/:fieldId", deleteFieldByFormIdAndFieldId);
@@ -11,6 +11,7 @@ module.exports = function(app) {
         console.log("Inside server side createNewFieldForFormId - fields");
         var formId = req.params.formId;
         var fieldObj = req.body;
+        console.log("In server!!!!!!!!!!! field: ", fieldObj);
         model
             .createNewFieldForFormId(formId, fieldObj)
             .then(function(form){

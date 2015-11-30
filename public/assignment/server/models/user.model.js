@@ -15,6 +15,7 @@ var q = require("q");
 module.exports = function(mongoose,db) {
 //accept dependency objects in module constructor, eg pass app, db and other instances in constructor
 //module.exports = function(...)
+
     var UserSchema = require("./user.schema.js")(mongoose);
     var userModel = mongoose.model("userModel", UserSchema);
 
