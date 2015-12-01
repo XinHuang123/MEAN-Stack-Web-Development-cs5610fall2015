@@ -96,7 +96,7 @@ module.exports = function(mongoose,db) {
         console.log("inside user.model.js updateUser");
             var deferred = q.defer();
             console.log("update user userId: "+ userId);
-            userObj.delete("_id");
+            //userObj.delete("_id");
             userModel.update({_id: userId}, {$set: userObj}, function(err, user) {
                      if(err) {
                         console.log("Cud not find Usr!!");
