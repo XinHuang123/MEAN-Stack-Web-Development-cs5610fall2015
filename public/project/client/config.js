@@ -27,6 +27,19 @@
                     controller: "ProfileController",
                     controllerAs: "model"
                 })
+                .when("/search",
+                {
+                    templateUrl: "views/search/search.view.html",
+                    controller: "SearchController",
+                    controllerAs: "model"
+                })
+                .when("/friend",
+                {
+                    templateUrl: "views/friend/friend.view.html",
+                    controller: "FriendController",
+                    controllerAs: "model"
+                })
+
                 .when("/form",
                 {
                     templateUrl: "views/form/form.view.html",
