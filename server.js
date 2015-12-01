@@ -15,9 +15,10 @@ app.use(multer());//for parsing multipart/form-data
 //require("./public/assignment/server/services/form.service.js")(app);
 //require("./public/assignment/server/services/field.service.js")(app);
 
+var connectionString = 'mongodb://127.0.0.1:27017/cs5610';
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/cs5610');//connect to database
+mongoose.connect(connectionString);//connect to database
 var db = mongoose.connection;
 
 require("./public/assignment/server/app.js")(app, db, mongoose);
