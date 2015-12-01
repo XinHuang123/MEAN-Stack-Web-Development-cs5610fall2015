@@ -1,0 +1,24 @@
+span.glyphicon.glyphicon-triangle-bottom {
+    font-size: 0.8em;
+}
+
+.col-md-6 {
+    width: 50%;
+    margin-left: 200px;
+}
+
+.allicons{
+    float:right;
+}
+
+.navbar-form {
+    overflow: auto;
+}
+.navbar-form .input-group {
+    display: inline-block;
+    width: 90%;
+}
+.navbar-form .input-group .form-control{
+    display: inline;
+    width: 90%;
+}

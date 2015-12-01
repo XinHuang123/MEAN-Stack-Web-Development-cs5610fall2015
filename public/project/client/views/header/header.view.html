@@ -1,0 +1,15 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid" ng-controller="HeaderController">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/home">Form Maker</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right nav-pills">
+                <li ng-class="{'active': $location.url().indexOf('register') != -1 }"><a ng-click="selectedTab = 'register'" href="#/register">Register</a></li>
+                <li ng-class="{'active': $location.url().indexOf('login') != -1}"><a ng-click="selectedTab = 'login'" href="#/login">Login</a></li>
+                <li ng-class="{'active': $location.url().indexOf('username') != -1}"><a href="#">Username</a></li>
+                <li ng-class="{'active': $location.url().indexOf('logout') != -1}"><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

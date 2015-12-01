@@ -22,5 +22,8 @@ var db = mongoose.connection;
 
 require("./public/assignment/server/app.js")(app, db, mongoose);
 
+process.on('uncaughtException', function (err) {
+    console.log(err);
+});
 
 app.listen(port,ipaddress);
