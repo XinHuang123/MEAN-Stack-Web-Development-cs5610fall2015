@@ -31,7 +31,7 @@ module.exports = function(mongoose,db) {
         return api;
 
         function findUserById(userId) {
-        console.log("inside user.model.js findUserById!!!!!");
+        //console.log("inside user.model.js findUserById!!!!!");
             var deferred = q.defer();
             userModel.findById(userId, function(err, user){
                             deferred.resolve(user);
