@@ -1,3 +1,4 @@
+"use strict";
 module.exports = function(app, db, mongoose) {
 
     var model = require("./models/user.model.js") (mongoose, db);
