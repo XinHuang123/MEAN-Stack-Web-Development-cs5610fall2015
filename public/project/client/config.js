@@ -53,7 +53,7 @@
                     controllerAs: "model"
                 })
                 .otherwise({
-                    redirectTo: "/home"
+                    redirectTo: "/index.html"
                 })
 		});
 })();

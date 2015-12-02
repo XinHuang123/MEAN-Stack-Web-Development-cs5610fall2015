@@ -1,89 +1,50 @@
-//var model = require("../models/user.model.js")();
-
+//server side
+'use strict';
 module.exports = function(app, model) {
-    app.get("/api/assignment/user/username=:username&password=:password", findUserByUsernameAndPassword);
-    app.get("/api/assignment/user", findAllUsers);
-    app.get("/api/assignment/user/:id", findUserById);
-    app.post("/api/assignment/user", addNewUser);
-    app.put("/api/assignment/user/:id", updateUser);
-    app.delete("/api/assignment/user/:id", deleteUser);
-    app.get("/api/assignment/user/username=:username", findUserByUsername);
+    app.get("/api/project/restaurant/", findAllRestaurant);
+    app.get("/api/project/restaurant/name=:name", findRestaurantByName);
+    app.get("/api/project/restaurant/location=:location", findRestaurantByLocation);
+    app.get("/api/project/restaurant/rate=:rate", findRestaurantByRate);
 
-    function findAllUsers(req, res) {
-        console.log("Inside findAllUsers!");
+    function findAllRestaurant(req, res) {
+        console.log("server side findAllRestaurant!");
         model
-            .findAllUsers()
-            .then(function(users){
-                res.json(users);
+            .findAllRestaurant()
+            .then(function(restaurants){
+                res.json(restaurants);
             });
     }
 
-    function findUserByUsername(req, res) {
-        console.log("Inside server side findUserByUsername");
-        var username = req.params.username;
+    function findRestaurantByName(req, res) {
+        console.log("server side findRestaurantByName");
+        var name = req.params.name;
         model
-            .findUserByUsername(username)
+            .findRestaurantByName(username)
             .then(function(user){
                 res.json(user);
             });
     }
 
-    function findUserByUsernameAndPassword(req, res) {
-        console.log("Inside server side findUserByUsernameAndPassword");
-        var username = req.params.username;
-        var pwd = req.params.password;
-        var credentials = {
-            username: username,
-            password: pwd
-        };
+    function findRestaurantByLocation(req, res) {
+        console.log("server side findRestaurantByLocation");
+        var location = req.params.location;
         model
-            .findUserByCredentials(credentials)
-            .then(function(user){
-                console.log(user);
-                res.json(user);
+            .findRestaurantByLocation(location)
+            .then(function(location){
+                res.json(location);
             });
     }
 
-    function addNewUser(req, res) {
-        console.log("Inside server side addNewUser");
-        var user = req.body;
+    function findRestaurantByRate(req, res) {
+        console.log("server side findRestaurantByRate");
+        var rate = req.params.rate;
         model
-            .addNewUser(user)
-            .then(function(users){
-                res.json(users);
+            .findRestaurantByRate(rate)
+            .then(function(rate){
+                res.json(rate);
             });
     }
 
-    function findUserById(req, res){
-        console.log("Inside server side findUserById");
-        var userId = req.params.id;
-        model
-            .findUserById(userId)
-            .then(function(user){
-                res.json(user);
-            });
-    }
 
-    function updateUser(req, res) {
-        console.log("Inside server side updateUser");
-        var userId = req.params.id;
-        var userObj = req.body;
-        model
-            .updateUser(userId, userObj)
-            .then(function(user){
-                console.log("Updated user: " + user);
-                res.json(user);
-            });
-    }
-
-    function deleteUser(req, res) {
-        console.log("Inside server side deleteUser");
-        var userId = req.params.id;
-        model
-            .deleteUser(userId)
-            .then(function(users){
-                res.json(users);
-            });
-    }
 
 };

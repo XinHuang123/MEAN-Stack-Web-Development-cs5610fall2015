@@ -11,20 +11,16 @@
                         <th>Name</th>
                         <th>Location</th>
                         <th>Rate</th>
+                        <th>
+                            <button ng-click="model.search()" class="btn btn-success form-control">Search</button>
+                        </th>
                     </tr>
                     </thead>
+                        <tr>
+                            <input class="form-control" ng-model="course.title"/>
+                        </tr>
                     <tbody>
-                    <tr ng-repeat="course in courses"><!--render data from database-->
-                        <td>{{course.title}}</td>
-                        <td>{{course.seats}}</td>
-                        <td>{{course.starts | date:'short'}}</td>
-                        <td>
-                            <button ng-click="selectCourse(course._id)"
-                                    class="btn btn-info">Select</button>
-                            <button ng-click="deleteCourse(course._id)"
-                                    class="btn btn-danger">Remove</button>
-                        </td>
-                    </tr>
+
                     </tbody>
                 </table>
 

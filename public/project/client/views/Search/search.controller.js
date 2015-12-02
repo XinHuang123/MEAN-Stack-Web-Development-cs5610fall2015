@@ -1,10 +1,16 @@
+'use strict';
 (function(){
-    'use strict';
     angular
         .module("FormBuilderApp")
         .controller("SearchController", SearchController);
 
-    function SearchController(RestaurantService, $rootScope, $location) {
+    function SearchController(RestaurantService) {
+        var model = this;
+        model.seach = search;
+
+        function search(){
+
+        }
 
     }
 })();

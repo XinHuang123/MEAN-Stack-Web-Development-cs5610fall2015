@@ -1,5 +1,6 @@
+//client side
+'use strict';
 (function(){
-    'use strict';
     angular
         .module("FormBuilderApp")
         .factory("RestaurantService", RestaurantService);
@@ -28,7 +29,7 @@
 
         function findRestaurantByName(RestaurantByName) {
             var deferred = $q.defer();
-            $http.get("/api/project/restaurant/"+RestaurantByName)
+            $http.get("/api/project/restaurant/name="+RestaurantByName)
                 .success(function(Restaurant){
                     deferred.resolve(Restaurant);
                 });
@@ -39,15 +40,22 @@
 
         function findRestaurantByLocation(location) {
             var deferred = $q.defer();
-            $http.get("/api/project/restaurant/username=" + username)
-                .success(function(user){
-                    deferred.resolve(user);
+            $http.get("/api/project/restaurant/location=" + location)
+                .success(function(location){
+                    deferred.resolve(location);
                 });
 
             return deferred.promise;
         }
 
-
+        function findRestaurantByRate(rate){
+            var deferred=$q.defer();
+            $http.get("/api/project/restaurant/rate="+rate)
+                .success(function(rate){
+                deferred.resolve(location);
+            });
+            return deferred.promise;
+        }
 
 
     }
