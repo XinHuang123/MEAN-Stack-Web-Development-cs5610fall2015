@@ -1,12 +1,12 @@
 //var model = require("../models/form.model.js")();
 
 module.exports = function(app, model) {
-    app.get("/api/assignment/form", findAllForms);
-    app.put("/api/assignment/form/:formId", updateForm);
-    app.get("/api/assignment/user/:userId/form", findAllFormsForUser);
-    app.post("/api/assignment/user/:userId/form", createNewForm);
-    app.delete("/api/assignment/form/:formId", deleteForm);
-    app.get("/api/assignment/form/:formId", findFormById);
+    app.get("/api/project/form", findAllForms);
+    app.put("/api/project/form/:formId", updateForm);
+    app.get("/api/project/user/:userId/form", findAllFormsForUser);
+    app.post("/api/project/user/:userId/form", createNewForm);
+    app.delete("/api/project/form/:formId", deleteForm);
+    app.get("/api/project/form/:formId", findFormById);
 
     function createNewForm(req, res) {
         console.log("Inside server side createNewForm - forms");

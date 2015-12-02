@@ -1,4 +1,36 @@
-<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-    <h1>Search</h1>
+<html>
+    <head>Search</head>
+    <body>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div class="container" ng-controller="SearchController">
+                <h1>Search</h1>
 
-</div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Rate</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="course in courses"><!--render data from database-->
+                        <td>{{course.title}}</td>
+                        <td>{{course.seats}}</td>
+                        <td>{{course.starts | date:'short'}}</td>
+                        <td>
+                            <button ng-click="selectCourse(course._id)"
+                                    class="btn btn-info">Select</button>
+                            <button ng-click="deleteCourse(course._id)"
+                                    class="btn btn-danger">Remove</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </body>
+
+</html>

@@ -4,7 +4,7 @@
         .module("FormBuilderApp")
         .controller("SearchController", SearchController);
 
-    function SearchController(UserService, $rootScope, $location) {
+    function SearchController(RestaurantService, $rootScope, $location) {
 
     }
 })();

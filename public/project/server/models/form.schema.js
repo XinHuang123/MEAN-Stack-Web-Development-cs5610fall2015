@@ -5,7 +5,7 @@ module.exports = function(mongoose) {
             "title": String,
             "userId" : String,
             "fields" : [FieldSchema]
-        }, {collection: "cs5610.assignment.form"});
+        }, {collection: "cs5610.project.form"});
 
         return FormSchema;
 };

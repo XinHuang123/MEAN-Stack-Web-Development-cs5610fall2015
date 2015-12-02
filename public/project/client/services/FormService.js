@@ -26,7 +26,7 @@
 
         function createFormForUser(userId, form) {
             var deferred = $q.defer();
-            $http.post("/api/assignment/user/" + userId + "/form", form)
+            $http.post("/api/project/user/" + userId + "/form", form)
                 .success(function(forms){
                     deferred.resolve(forms);
                 });
@@ -36,7 +36,7 @@
 
         function findAllFormsForUser(userId) {
             var deferred = $q.defer();
-            $http.get("/api/assignment/user/" + userId + "/form")
+            $http.get("/api/project/user/" + userId + "/form")
                 .success(function(forms){
                     deferred.resolve(forms);
                 });
@@ -47,7 +47,7 @@
 
         function getFormById(formId) {
             var deferred = $q.defer();
-            $http.get("/api/assignment/form/" + formId)
+            $http.get("/api/project/form/" + formId)
                 .success(function(form){
                     deferred.resolve(form);
                 });
@@ -58,7 +58,7 @@
 
         function deleteFormById(formId) {
             var deferred = $q.defer();
-            $http.delete("/api/assignment/form/"+ formId)
+            $http.delete("/api/project/form/"+ formId)
                 .success(function(forms){
                     deferred.resolve(forms);
                 });
@@ -68,7 +68,7 @@
 
         function updateFormById(formId, newForm) {
             var deferred = $q.defer();
-            $http.put("/api/assignment/form/" + formId, newForm)
+            $http.put("/api/project/form/" + formId, newForm)
                 .success(function(form){
                     console.log("Update successful!!!");
                     deferred.resolve(form);
