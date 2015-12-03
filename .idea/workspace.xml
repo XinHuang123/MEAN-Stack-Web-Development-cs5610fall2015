@@ -2,78 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b525298-0517-4b22-af6c-dbf71c0f8b1d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/contact.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/copy of index/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/css/dashboard.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/css/lightbox.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/css/slider.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/gallery.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/camera-loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/facebook.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/google.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/icon1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/icon2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/icon3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/lightbox-btn-close.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/lightbox-btn-next.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/lightbox-ico-loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/marker.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/search-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/slider1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/slider2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/slider3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/slider4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/images/twitter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/js/camera.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/js/jquery.easing.1.3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/js/jquery.lightbox.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/js/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/js/lightbox.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/services/FieldService.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/services/FormService.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/services/RestaurantService.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/services/UserService.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/Search/search.controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/Search/search.view.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/about/about.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/field/field.controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/field/field.view.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/form/form.controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/form/form.view.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/friend/friend.controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/friend/friend.view.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/header/header.controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/header/header.view.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/home/home.view.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/login/login.controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/login/login.view.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/profile/profile.controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/profile/profile.view.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/register/register.controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/register/register.view.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/sidebar/sidebar.controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/client/views/sidebar/sidebar.view.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/server/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/server/models/field.schema.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/server/models/form.mock.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/server/models/form.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/server/models/form.schema.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/server/models/restaurant.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/server/models/restaurant.schema.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/server/models/user.mock.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/server/models/user.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/server/models/user.schema.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/server/services/field.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/server/services/form.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/server/services/restaurant.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/server/services/user.service.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cs5610.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,8 +26,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53158706">
-              <caret line="23" column="59" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.71648693">
+              <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -644,8 +573,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53158706">
-          <caret line="23" column="59" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.71648693">
+          <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
           <folding />
         </state>
       </provider>
