@@ -1,4 +1,3 @@
-"use strict";
 module.exports = function(mongoose) {
 
     var FieldSchema = require("./field.schema.js")(mongoose);

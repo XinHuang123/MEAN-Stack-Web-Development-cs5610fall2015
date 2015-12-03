@@ -1,4 +1,3 @@
-"use strict";
 module.exports = function(mongoose) {
     var FieldSchema = mongoose.Schema({
             "label": String,

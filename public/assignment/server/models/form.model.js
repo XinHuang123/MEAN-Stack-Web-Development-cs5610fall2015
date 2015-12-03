@@ -1,4 +1,3 @@
-"use strict";
 var q = require("q");
 
 module.exports = function(mongoose, db) {
