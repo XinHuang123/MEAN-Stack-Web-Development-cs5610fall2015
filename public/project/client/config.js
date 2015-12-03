@@ -7,7 +7,7 @@
 			$routeProvider
 				.when("/home",
 				{
-					templateUrl: "views/home/home.view.html"
+					templateUrl: "home.view.html"
 				})
 				.when("/login",
                 {
@@ -69,7 +69,7 @@
                 })
 
                 .otherwise({
-                    redirectTo: "views/home/home.view.html"
+                    redirectTo: "/home"
                 })
 		});
 })();
