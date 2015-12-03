@@ -1,5 +1,5 @@
 //var model = require("../models/form.model.js")();
-
+"use strict";
 module.exports = function(app, model) {
     app.post("/api/assignment/form/:formId/field", createNewFieldForFormId);
     app.put("/api/assignment/form/:formId/field/:fieldId", updateFieldForFormId);

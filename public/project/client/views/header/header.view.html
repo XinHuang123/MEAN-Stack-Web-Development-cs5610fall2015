@@ -1,0 +1,23 @@
+  <div class="top-nav">
+            <div class="top-nav-left">
+                <ul ng-controller="HeaderController">
+                    <li ng-class="{'active': $location.url().indexOf('home') != -1}"><a href="#/">Home</a></li>
+                    <li ng-class="{'active': $location.url().indexOf('about') != -1}"><a href="#/about">About</a></li>
+                    <li ng-class="{'active': $location.url().indexOf('gallery') != -1}"><a href="#/gallery">Gallery</a></li>
+                    <li ng-class="{'active': $location.url().indexOf('contact') != -1}"><a href="#/contact">Contact</a></li>
+                    <li ng-class="{'active': $location.url().indexOf('friend') != -1}"><a href="#/friend">Friend</a></li>
+                    <div class="clear"> </div>
+                </ul>
+            </div>
+            <div class="top-nav-right">
+                <form>
+                    <input type="text"><input type="submit" value="" />
+                </form>
+            </div>
+            <div class="clear"> </div>
+  </div>
+
+
+
+
+

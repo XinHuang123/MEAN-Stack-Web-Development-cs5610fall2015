@@ -1,3 +1,4 @@
+"use strict";
 module.exports = function(mongoose) {
     var UserSchema = mongoose.Schema({
             "firstName": String,

@@ -1,0 +1,17 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">Login</h1>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="userName">Username:</label>
+            <input id="userName" ng-model="model.username" type="text" class="form-control" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input id="pwd" ng-model="model.pwd" type="password" class="form-control" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <button id="submit" type="submit" ng-click="model.login()" class="btn btn-success form-control">Login</button>
+        </div>
+    </form>
+
+</div>
