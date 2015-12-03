@@ -52,6 +52,22 @@
                     controller: "FieldController",
                     controllerAs: "model"
                 })
+                .when("/about",
+                {
+                    templateUrl: "views/about/about.html"
+
+                })
+                .when("/gallery",
+                {
+                    templateUrl: "gallery.html"
+
+                })
+                .when("/contact",
+                {
+                    templateUrl: "contact.html"
+
+                })
+
                 .otherwise({
                     redirectTo: "/index.html"
                 })
