@@ -1,14 +1,9 @@
-'use strict';
-module.exports = function(app, db, mongoose) {
+"use strict";
 
-    var model = require("./models/user.model.js") (mongoose, db);
-    require("./services/user.service.js")(app, model);
+module.exports = function(app, mongoose, db, passport, localStrategy) {
+    var userModel = require('./models/user.model.server.js')(mongoose, db, localStrategy);
+    var listingModel = require('./models/listing.model.server.js')(mongoose, db);
 
-    var formModel = require("./models/form.model.js") (mongoose, db);
-    require("./services/form.service.js")(app, formModel);
-    require("./services/field.service.js")(app, formModel);
-
-    //var restaurantModel = require("./models/form.model.js") (mongoose, db);
-    //require("./services/restaurant.service.js")(app, restaurantModel);
-
+    var userService = require('./services/user.service.server.js')(app, userModel);
+    var listingService = require('./services/listing.service.server.js')(app, listingModel);
 };

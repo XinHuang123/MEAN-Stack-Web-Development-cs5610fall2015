@@ -1,0 +1,162 @@
+<div class="main page-offset">
+    <div class="form-panel col-xs-11 col-sm-8 col-centered">
+        <h3>Add Listing</h3>
+
+        <div class="form-holder">
+            <form action="">
+                <div class="listing-details clearfix">
+                    <div class="form-group col-xs-12 col-sm-4 no-padding">
+                        <label for="property-type">Type</label>
+                        <select name="property-type" id="property-type" class="form-control">
+                            <option value="APT">Apartment</option>
+                            <option value="CON">Condo</option>
+                            <option value="TOW">Town House</option>
+                        </select></div>
+                    <div class="form-group col-xs-12 col-sm-4 no-padding">
+                        <label for="bed">Bed</label>
+                        <select name="bed" id="bed" class="form-control">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-4 no-padding">
+                        <label for="bath">Bath</label>
+                        <select name="" id="bath" class="form-control">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xs-11 no-padding">
+                        <label for="autocomplete">Address</label>
+                        <input type="text" id="autocomplete" onfocus="geolocate()" class="form-control"  placeholder="Enter yout address"/>
+                    </div>
+                    <div class="form-group col-xs-11 no-padding">
+                        <label for="addr1">Address 1</label>
+                        <input type="text" id="addr1" class="form-control" placeholder="1 Popular St"/>
+                    </div>
+                    <div class="form-group col-xs-11 no-padding">
+                        <label for="addr2">Address 2</label>
+                        <input type="text" id="addr2" class="form-control" placeholder="Contd"/>
+                    </div>
+                    <div class="form-group col-xs-6 col-sm-4 no-padding">
+                        <label for="city">City</label>
+                        <input type="text" id="city" class="form-control" placeholder="City"/>
+                    </div>
+                    <div class="form-group col-xs-6 col-sm-4 no-padding">
+                        <label for="state">State</label>
+                        <input type="text" id="state" class="form-control" placeholder="State"/>
+                    </div>
+                    <div class="form-group col-sm-4 no-padding">
+                        <label for="zip">Zip Code</label>
+                        <input type="text" id="zip" class="form-control" placeholder="XXXXX"/>
+                    </div>
+                    <div class="form-group col-xs-11 no-padding">
+                        <label for="rent">Rent/mo</label>
+                        <input type="text" id="rent" class="form-control" placeholder="$XXXX"/>
+                    </div>
+                </div>
+
+                <div class="listing-props">
+                    <div class="image-upload">
+                        <label for="upload">Upload Images</label>
+                        <a class="btn btn-custom" role="button" data-toggle="modal" data-target="#upload-modal" id="upload">Upload</a>
+                        <div class="modal fade" id="upload-modal" tabindex="-1" role="dialog" aria-labelledby="upload-images">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Upload Images</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="choose">Select images to upload</label>
+                                            <a class="btn btn-info" role="button" id="choose">Choose images</a>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Upload</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="misc-details clearfix">
+                        <div class="form-wrap col-xs-12 no-padding">
+                            <div class="form-group col-sm-6 no-padding">
+                                <label for="heat-included">Heat Included?</label>
+
+                                <div class="radio" id="heat-included">
+                                    <label>
+                                        <input type="radio" name="heat" id="heat" value="option1">Yes
+                                    </label>
+
+                                    <label class="option-no">
+                                        <input type="radio" name="heat" id="no-heat" value="option1">No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-6 no-padding">
+                                <label for="heat-included">Pets?</label>
+
+                                <div class="radio" id="pets-allowed">
+                                    <label>
+                                        <input type="radio" name="heat" id="pets" value="option1">Yes
+                                    </label>
+
+                                    <label class="option-no">
+                                        <input type="radio" name="heat" id="no-pets" value="option1">No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-wrap col-xs-12 no-padding">
+                            <div class="form-group col-sm-6 no-padding">
+                                <label for="heat-included">Gym?</label>
+
+                                <div class="radio" id="gym-available">
+                                    <label>
+                                        <input type="radio" name="heat" id="gym" value="option1">
+                                        Yes
+                                    </label>
+
+                                    <label class="option-no">
+                                        <input type="radio" name="heat" id="no-gym" value="option1">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-6 no-padding">
+                                <label for="heat-included">Parking?</label>
+
+                                <div class="radio" id="parking-available">
+                                    <label>
+                                        <input type="radio" name="heat" id="parking" value="option1">
+                                        Yes
+                                    </label>
+
+                                    <label class="option-no">
+                                        <input type="radio" name="heat" id="no-parking" value="option1">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="desc">Description</label>
+                            <textarea name="description" id="desc" cols="15" rows="3" class="form-control" placeholder="(Optional) Anything you want to add about your property"></textarea>
+                        </div>
+
+                        <a class="btn btn-custom" href="#/myListing" role="button" id="add-listing">Add Listing</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

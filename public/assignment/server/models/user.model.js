@@ -83,7 +83,7 @@ module.exports = function(mongoose,db) {
         }
 
         function addNewUser(newUser) {
-        console.log("inside user.model.js addNewUser");
+            console.log("inside user.model.js addNewUser");
             var deferred = q.defer();
             console.log(newUser);
             userModel.create(newUser, function(err, doc){

@@ -1,41 +1,26 @@
-<!----Start-header----->
-  <div class="header">
-      <div class="wrap">
-          <div class="top-header">
-              <div class="logo">
-                  <a href="index.html"><img src="./images/logo.png" title="logo" /></a>
-              </div>
-              <div class="social-icons">
-                  <ul>
-                      <li><a href="#"><img src="./images/facebook.png" title="facebook" /></a></li>
-                      <li><a href="#"><img src="./images/twitter.png" title="twitter" /></a></li>
-                      <li><a href="#"><img src="./images/google.png" title="google pluse" /></a></li>
-                  </ul>
-              </div>
-              <div class="clear"> </div>
-          </div>
-          <!---start-top-nav---->
-          <div class="top-nav">
-              <div class="top-nav-left">
-                  <ul ng-controller="HeaderController">
-                      <li ng-class="{'active': $location.url().indexOf('home') != -1}"><a href="#/">Home</a></li>
-                      <li ng-class="{'active': $location.url().indexOf('about') != -1}"><a href="#/about">About</a></li>
-                      <li ng-class="{'active': $location.url().indexOf('gallery') != -1}"><a href="#/gallery">Gallery</a></li>
-                      <li ng-class="{'active': $location.url().indexOf('contact') != -1}"><a href="#/contact">Contact</a></li>
-                      <li ng-class="{'active': $location.url().indexOf('friend') != -1}"><a href="#/friend">Friend</a></li>
-                      <div class="clear"> </div>
-                  </ul>
-              </div>
-              <div class="top-nav-right">
-                  <form>
-                      <input type="text"><input type="submit" value="" />
-                  </form>
-              </div>
-              <div class="clear"> </div>
-          </div>
-          <!---End-top-nav---->
-          <!--<div ng-view></div>-->
-      </div>
-  </div>
-  </div>
-  <!----End-header----->
+<div class="container-fluid navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#/home">Restaurants</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse navbar-background">
+        <ul class="nav navbar-nav navbar-right">
+            <li ng-class="{'active' : $location.url().indexOf('home') !== -1}"><a class="nav-link" href="#/home">Home</a></li>
+            <li ng-if="!user" ng-class="{'active' : $location.url().indexOf('register') !== -1}"><a class="nav-link" href="#/register">Register</a></li>
+            <li ng-if="!user" ng-class="{'active' : $location.url().indexOf('login') !== -1}"><a class="nav-link" href="#/login">Login</a></li>
+            <li ng-if="user" ng-class="{'active' : $location.url().indexOf('profile') !== -1}"><a class="nav-link" href="#/profile">Profile</a></li>
+            <!--<li ng-if="user" ng-class="{'active' : $location.url().indexOf('addListing') !== -1}"><a class="nav-link" href="#/addListing">Add Listing</a></li>-->
+            <li ng-if="user" ng-class="{'active' : $location.url().indexOf('myListing') !== -1}"><a class="nav-link" href="#/myListing">My Listings</a></li>
+            <li ng-class="{'active' : $location.url().indexOf('search') !== -1}"><a class="nav-link" href="#/search">Search</a></li>
+            <li ng-if="user"><a class="nav-link">{{ user.username }}</a></li>
+            <li ng-if="user"><a class="nav-link" ng-click="logout()">Logout</a></li>
+        </ul>
+    </div>
+</div>

@@ -29,7 +29,7 @@
 
         function createUser(userObj) {
             var deferred = $q.defer();
-            userObj.id = uniqueId();
+            //userObj.id = uniqueId();
             $http.post("/api/assignment/user/", userObj)
                 .success(function(users){
                     deferred.resolve(users);

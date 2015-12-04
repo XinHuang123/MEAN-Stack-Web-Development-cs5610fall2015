@@ -3,9 +3,9 @@
 (function() {
     angular
         .module("Restaurant")
-        .controller("SearchController", SearchController);
+        .controller("AddListingController", AddListingController);
 
-    function SearchController($scope, $location) {
+    function AddListingController($scope, $location) {
         $scope.$location = $location;
     }
 })();

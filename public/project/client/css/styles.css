@@ -1,0 +1,565 @@
+/*style for restaurant*/
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-border td, .no-border tr {
+    border: none !important;
+}
+
+.panel {
+    border-radius: 0;
+    border: 0;
+}
+
+.panel-custom {
+    background-color: #ffffff;
+    height: 100%;
+}
+
+.page-offset {
+    padding-top: 30px;
+}
+
+.form-panel {
+    background-color: #ffffff;
+    padding: 30px;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 2px 2px #eee;
+}
+
+.form-panel h3 {
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 20px;
+}
+
+.btn-custom {
+    border: 0;
+    padding: 10px 15px;
+    border-radius: 1px;
+    background-color: #A62B38;
+    color: #ffffff;
+}
+
+.btn-custom:hover {
+    color: #eeeeee;
+}
+
+.icon-bar {
+    background-color: #000000;
+}
+
+.icon-type {
+    font-size: 1.3em !important;
+    margin-top: 7px;
+    color: #8C8C8C;
+}
+
+.fire {
+    color: #D75814;
+}
+
+.car {
+    color: #1976D2;
+}
+
+.paw {
+    color: #000000;
+}
+
+.heartbeat {
+    color: #82000B;
+}
+
+.alert-custom {
+    border-radius: 0;
+}
+
+/* Branding */
+.navbar-brand {
+    color: #A62B38;
+    font-family: Sans-serif;
+    font-size: 1.9em;
+    font-weight: 900;
+}
+
+/* App Navigation */
+.navigation {
+    background-color: #F7F7F7;
+    height: 70px;
+    padding-top: 10px;
+    z-index: 100;
+    box-shadow: 0 1px 0 #eeeeee;
+    /*F6F7F7*/
+}
+
+.nav-link {
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+.navbar-nav > .active > a {
+    color: #000000;
+    background-color: #eeeeee;
+}
+
+/* Footer */
+.footer {
+    background-color: #1f1f1f;
+    padding: 50px 0;
+}
+
+.link-set h5 {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.list-custom li {
+    margin: 22px 0;
+}
+
+.list-custom li a {
+    color: #787878;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.list-custom li a:hover {
+    color: #a1a1a1;
+    text-decoration: none;
+}
+
+/* Main view container */
+.main {
+    margin-top: 70px;
+    padding-bottom: 70px;
+    background-color: #fafafa;
+}
+
+/* Home page */
+.image-holder {
+    background: url(../img/pizza.jpg) center center no-repeat;
+    background-size: cover;
+    height: 450px;
+}
+
+.search-prompt {
+    padding-top: 160px;
+}
+
+.search-prompt h3 {
+    color: #f7f7f7;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 40px;
+    color: #000000;
+}
+
+.hero-panel {
+    margin-left: 15px;
+    margin-right: -15px;
+}
+
+.panel-heading {
+    /*background-color: #F03B55;*/
+    background-color: #f7f7f7;
+}
+
+.panel-heading h4 {
+    font-family: inherit;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.panel-body p {
+    padding: 0 50px;
+    font-family: inherit;
+    line-height: 1.8;
+    color: #9f9f9f;
+}
+
+/* Add Listing */
+.listing-details {
+    padding-bottom: 10px;
+    border-bottom: 2px dashed #eeeeee;
+}
+.form-holder label {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.listing-props {
+    padding: 15px 0;
+}
+
+#upload {
+    margin-left: 20px;
+}
+
+.radio {
+    display: inline-block;
+}
+
+.misc-details {
+    padding: 15px 0;
+}
+
+.option-no {
+    margin-left: 10px;
+}
+
+.form-wrap {
+    padding-top: 10px;
+}
+
+.form-wrap label {
+    padding-right: 15px;
+}
+
+#add-listing {
+    margin-top: 50px;
+}
+
+#choose {
+    margin-left: 15px;
+}
+
+#upload-modal {
+    margin-top: 150px;
+}
+
+/* Search view */
+.search-container {
+    margin-bottom: 60px;
+}
+
+.search-form-input {
+    padding-right: 0;
+}
+
+.search-container h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.search-box {
+    border-radius: 0 !important;
+}
+
+.search-button {
+    padding: 13px 0;
+}
+
+.search-image {
+    width: 100%;
+    height: 100%;
+}
+
+/* Results View */
+.my-listing h3 {
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 3px solid #f68b00;
+    display: inline-block;
+    padding-bottom: 7px;
+}
+
+.property-list {
+    margin: 30px 0;
+    padding: 0;
+}
+
+.property {
+    background-color: #ffffff;
+    padding: 0 20px 30px 20px;
+    box-shadow: 2px 2px 2px #eeeeee;
+}
+
+.indicator {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    font-size: 2em;
+    color: #A62B38;
+}
+
+.indicator:hover {
+    font-size: 2.3em;
+    transition: 0.2s font-size;
+}
+
+#edit-listing {
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+.edit-button {
+    border-radius: 1px;
+}
+
+.description h4 {
+    font-family: 'Open Sans', sans-serif;
+    color: #34343D;
+    font-weight: 700;
+}
+
+.description p {
+    font-family: inherit;
+    font-size: 1.1em;
+    line-height: 1.8;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #919FA9;
+}
+
+.details li {
+    font-weight: 400;
+}
+
+.pinned h3 {
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 3px solid #b9006e;
+    display: inline-block;
+    padding-bottom: 7px;
+}
+
+.pinned-property h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.pinned-property a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #ffd935;
+    padding-top: 10px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.pinned-property a:hover {
+    border-bottom: 2px solid #d73d32;
+    padding-bottom: 5px;
+}
+
+/* Result view */
+.back {
+    font-size: 2.8em !important;
+}
+
+.back-button {
+    position: absolute;
+    left: 40px;
+    color: #9E9E9E;
+}
+
+.back-button:hover {
+    color: #9E9E9E;
+    font-size: 1.1em !important;
+    transition: 0.2s font-size;
+}
+
+.pin {
+    position: absolute;
+    top: 63px;
+    right: 5px;
+    font-size: 2.5em !important;
+    color: #AD000E;
+}
+
+.pin:hover {
+    color: #7B000A;
+    font-size: 2.8em !important;
+}
+
+.gallery {
+    padding: 20px;
+}
+
+.images {
+    margin: 0 auto;
+}
+
+.images a{
+    padding: 5px 5px;
+}
+
+.images img {
+    margin: 10px 0;
+    width: 200px;
+    height: 150px;
+}
+
+.detail-container {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    margin-top: 50px;
+}
+
+.property-address {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -10px;
+}
+
+.property-description {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.8;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.property-info h4 {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 10px;
+    border-bottom: 3px solid #ffd935;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.places h4 {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 10px;
+    border-bottom: 3px solid #4CAF50;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.location h4 {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 10px;
+    border-bottom: 3px solid #283593;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.price h2, .price h3 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.features {
+    padding: 10px 15px;
+}
+
+.t-row h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.t-row p {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0;
+    margin-top: 7px;
+}
+
+.places table {
+    margin-left: 15px;
+}
+
+.location {
+    height: 450px;
+}
+
+.location iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.places {
+    margin-top: 80px;
+}
+
+/* Responsive layout styles */
+@media screen and (max-width: 992px) {
+    .property-address h2 {
+        font-size: 1.8em;
+        text-align: center;
+    }
+
+    .price h2, .price h3 {
+        display: inline-block;
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-background {
+        background-color: #ffffff;
+        margin-top: 10px;
+    }
+
+    .nav > li {
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .nav-link {
+        text-align: center;
+    }
+
+    .description h4 {
+        margin-top: 10px;
+        font-size: 1em;
+    }
+
+    .description p {
+        font-size: 0.9em;
+    }
+
+    .property {
+        padding: 0 10px 30px 0;
+    }
+
+    .back-button {
+        left: 20px;
+    }
+
+    .property-address h2 {
+        font-size: 1.1em;
+        text-align: left;
+        margin-top: 70px;
+        vertical-align: bottom;
+    }
+
+    .detail-container {
+        margin-top: 40px;
+    }
+
+    .pin {
+        top: 40px;
+    }
+
+    .images a{
+        padding: 15px 5px;
+    }
+
+    .images img {
+        width: 150px;
+        height: 100px;
+    }
+
+    .location {
+        height: 350px;
+    }
+}
