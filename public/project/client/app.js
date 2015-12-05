@@ -10,9 +10,9 @@ app.directive("navigation", function () {
     }
 });
 
-//app.directive("pageFooter", function () {
-//    return {
-//        restrict: 'E',
-//        templateUrl: 'views/footer/footer.view.html'
-//    }
-//});
+app.directive("pageFooter", function () {
+    return {
+        restrict: 'E',
+        templateUrl: 'views/footer/footer.view.html'
+    }
+});
