@@ -28,7 +28,7 @@
                         $location.url("/home");
                     } else {
                         $scope.loginerror = true;
-                        $scope.loginErrorMessage = "Oh Snap! Your credentials did not match our records. Please try again!"
+                        $scope.loginErrorMessage = "Your credentials did not match our records. Please try again!"
                     }
                 });
         }

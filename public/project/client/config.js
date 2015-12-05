@@ -11,31 +11,38 @@
         })
         .when("/register", {
             templateUrl: "views/register/register.view.html",
-            controller: "RegisterController"
+            controller: "RegisterController",
+            controllerAs: "model"
         })
         .when("/login", {
             templateUrl: "views/login/login.view.html",
-            controller: "LoginController"
+            controller: "LoginController",
+            controllerAs: "model"
         })
         .when("/profile", {
             templateUrl: "views/profile/profile.view.html",
-            controller: "ProfileController"
+            controller: "ProfileController",
+            controllerAs: "model"
         })
         .when("/search", {
             templateUrl: "views/search/search.view.html",
-            controller: "SearchController"
+            controller: "SearchController",
+            controllerAs: "model"
         })
         .when("/addListing", {
             templateUrl: "views/addListing/addlisting.view.html",
-            controller: "AddListingController"
+            controller: "AddListingController",
+            controllerAs: "model"
         })
         .when("/myListing", {
             templateUrl: "views/myListing/mylisting.view.html",
-            controller: "MyListingController"
+            controller: "MyListingController",
+            controllerAs: "model"
         })
         .when("/result", {
             templateUrl: "views/result/result.view.html",
-            controller: "ResultController"
+            controller: "ResultController",
+            controllerAs: "model"
         })
         .otherwise({
            redirectTo: "/home"
