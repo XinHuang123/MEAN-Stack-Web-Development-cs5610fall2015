@@ -1,14 +1,14 @@
 "use strict";
 (function() {
     angular
-        .module("Restaurant")
+        .module("MovieApp")
         .controller("LoginController", LoginController);
 
     function LoginController($scope, $location, $rootScope, UserService) {
         $scope.$location = $location;
         $scope.login = login;
         $scope.loginerror = false;
-        
+
 
         function login() {
             var userName = $scope.userName;

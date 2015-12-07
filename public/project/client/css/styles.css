@@ -150,9 +150,9 @@
 
 /* Home page */
 .image-holder {
-    background: url(../img/pizza.jpg) center center no-repeat;
+    background: url(../img/movie.jpg) center center no-repeat;
     background-size: cover;
-    height: 450px;
+    height: 900px;
 }
 
 .search-prompt {

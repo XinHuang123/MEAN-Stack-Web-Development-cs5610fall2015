@@ -1,7 +1,7 @@
 "use strict";
 (function() {
     angular
-        .module("Restaurant")
+        .module("MovieApp")
         .controller("RegisterController", RegisterController);
 
     function RegisterController($scope, $location, $rootScope, UserService) {

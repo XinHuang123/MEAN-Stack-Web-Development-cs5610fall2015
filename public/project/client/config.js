@@ -2,7 +2,7 @@
 
 (function () {
     angular
-        .module("Restaurant")
+        .module("MovieApp")
         .config(Config);
 
     function Config($routeProvider) {
@@ -39,7 +39,7 @@
             controller: "MyListingController",
             controllerAs: "model"
         })
-        .when("/result", {
+        .when("/result/:idIMDB", {
             templateUrl: "views/result/result.view.html",
             controller: "ResultController",
             controllerAs: "model"

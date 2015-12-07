@@ -2,7 +2,7 @@
 
 (function() {
     angular
-        .module("Restaurant")
+        .module("MovieApp")
         .controller("FooterController", FooterController);
 
     function FooterController($scope, $location) {

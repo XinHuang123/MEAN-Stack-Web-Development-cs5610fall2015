@@ -2,7 +2,7 @@
 
 (function() {
     angular
-        .module("Restaurant")
+        .module("MovieApp")
         .controller("MyListingController", MyListingController);
 
     function MyListingController($scope, $location) {

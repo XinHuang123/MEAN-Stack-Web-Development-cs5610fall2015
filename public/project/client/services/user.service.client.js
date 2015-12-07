@@ -2,7 +2,7 @@
 
 (function(){
     angular
-        .module("Restaurant")
+        .module("MovieApp")
         .factory("UserService", UserService);
 
     function UserService($http, $q) {

@@ -11,7 +11,7 @@
 "use strict";
 (function() {
     angular
-        .module("Restaurant")
+        .module("MovieApp")
         .controller("ProfileController", ProfileController);
 
     function ProfileController(UserService,$rootScope) {

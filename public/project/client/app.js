@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module("Restaurant", ["ngRoute"]);
+var app = angular.module("MovieApp", ["ngRoute"]);
 
 app.directive("navigation", function () {
     return {

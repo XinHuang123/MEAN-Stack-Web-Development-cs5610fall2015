@@ -1,7 +1,7 @@
 <div class="main page-offset">
     <div class="row clearfix no-margin">
         <div class="search-container col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-2">
-            <h3>Restaurants</h3>
+            <h3>Search Movies By Title</h3>
 
             <!--<form class="form-horizontal">-->
                 <!--<div class="form-group form-group-lg">-->
@@ -16,10 +16,10 @@
             <form class="form-horizontal">
                 <div class="form-group form-group-lg">
                     <div class="col-xs-10 search-form-input">
-                        <input ng-model="movie.title" class="form-control search-box" type="text" id="search" placeholder="Restaurant">
+                        <input ng-model="movie.title" class="form-control search-box" type="text" id="search" placeholder="Movie title">
                     </div>
 
-                    <a ng-click="searchMovie(movie.title)" class="btn btn-custom col-xs-2 search-button"><span
+                    <a ng-click="model.search(movie.title)" class="btn btn-custom col-xs-2 search-button"><span
                             class="glyphicon glyphicon-search"
                             aria-hidden="true"></span></a>
 
@@ -35,28 +35,32 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>IMDB ID</th>
+                    <!--<th>IMDB ID</th>-->
                     <th>Title</th>
                     <th>Like</th>
                 </tr>
             </thead>
             <tbody>
 
-            <tr>
-                <td>321</td>
-                <td>Dumb and Dubmber</td>
-                <td>
-                    <button ng-click="likeMovie(321)" class="btn btn-info">
-                        <span class="glyphicon glyphicon-star-empty"></span>
-                    </button>
-                </td>
-            </tr>
+            <!--<tr>-->
+                <!--<td>321</td>-->
+                <!--<td>-->
+                    <!--<a href="#/result/tt0111946">Dumb and Dubmber</a>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<button ng-click="model.like(tt0111946)" class="btn btn-info">-->
+                        <!--<span class="glyphicon glyphicon-star-empty"></span>-->
+                    <!--</button>-->
+                <!--</td>-->
+            <!--</tr>-->
 
-                <tr ng-repeat="movie in response">
-                    <td>{{movie.idIMDB}}</td>
-                    <td>{{movie.title}}</td>
+                <tr ng-repeat="movie in model.response">
+                    <!--<td>{{movie.idIMDB}}</td>-->
                     <td>
-                        <button ng-click="likeMovie(movie.idIMDB)" class="btn btn-info">
+                        <a href="#/result/{{movie.idIMDB}}">{{movie.title}}</a>
+                    </td>
+                    <td>
+                        <button ng-click="model.like(movie)" class="btn btn-info">
                             <span class="glyphicon glyphicon-star-empty"></span>
                         </button>
                     </td>
