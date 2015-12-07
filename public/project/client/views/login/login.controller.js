@@ -4,7 +4,7 @@
         .module("Restaurant")
         .controller("LoginController", LoginController);
 
-    function LoginController($scope, $location, $rootScope, UserService, $http) {
+    function LoginController($scope, $location, $rootScope, UserService) {
         $scope.$location = $location;
         $scope.login = login;
         $scope.loginerror = false;
@@ -17,13 +17,13 @@
         //        user_key: "45a370392f581a1a8992763ad55671d7"
         //    }
         //};
-
-        $http.get("https://developers.zomato.com/api/v2.1/search?q=bbq", config)
-            .then(function(response){
-                console.log(response);
-            }, function(error){
-                console.log(error);
-            });
+        //
+        //$http.get("https://developers.zomato.com/api/v2.1/search?q=bbq", config)
+        //    .then(function(response){
+        //        console.log(response);
+        //    }, function(error){
+        //        console.log(error);
+        //    });
 
         function login() {
             var userName = $scope.userName;
