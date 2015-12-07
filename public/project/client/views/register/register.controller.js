@@ -20,7 +20,7 @@
 
                             for (var i = 0; i < users.length; i++) {
                                 if (users[i].username === $scope.userName) {
-                                    var message = "User Name already exists. Please choose a different one. We accept only letters and numbers in usernames";
+                                    var message = "User Name already exists";
 
                                     if ($scope.regError) {
                                         $scope.regError += " | " + message;
