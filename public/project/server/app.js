@@ -6,4 +6,5 @@ module.exports = function(app, mongoose, db, passport, localStrategy) {
 
     var userService = require('./services/user.service.server.js')(app, userModel);
     var listingService = require('./services/listing.service.server.js')(app, listingModel);
+
 };
