@@ -1,17 +1,24 @@
 "use strict";
-var model=require("../models/movie.model.server.js")();
-module.exports=function(app){
-    app.post("/api/project//movies/likes/:idIMDB",likes);
+module.exports=function(app,model){
+    app.post("/api/project//movies/likes/:idIMDB/:currentuserid",likes);
     app.get("/api/project//movies/likes",getlikes);
 
     function likes(req,res){
         var idIMDB=req.params.idIMDB;
+        var currentuserid=req.params.currentuserid;
         var movie=req.body;
-        console.log("likes"+idIMDB);
-        model.likes(idIMDB,movie );
+        console.log("likes"+idIMDB+"currentuserid"+currentuserid);
+        model.likes(idIMDB,movie,currentuserid);
     }
     function getlikes(req,res){
-        res.json(model.getLikes());
+        ////res.json(model.getLikes());
+        //model
+        //    .getlikes()
+        //    .then(function(likes){
+        //       res.json(likes);
+        //    });
 
     }
+
+
 }

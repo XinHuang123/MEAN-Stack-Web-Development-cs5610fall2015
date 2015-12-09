@@ -2,7 +2,7 @@
     <a href="#/search" class="back-button"><i class="fa fa-arrow-circle-o-left back"></i></a>
 
     <div class="col-xs-11 col-sm-10 col-md-9 col-centered result-container">
-        <div class="property-address"><h2>Soul Fire Search</h2></div>
+        <div class="property-address"><h2>{{model.movie.title}}</h2></div>
         <div class="detail-container">
             <span class="glyphicon glyphicon-pushpin pin" aria-hidden="true"></span>
 
@@ -53,7 +53,7 @@
                                 </button>
 
                                 <div class="description col-xs-11 col-sm-11">
-                                    <h4>{{model.movie.title}}</h4>
+                                    <h4>Plot</h4>
                                     <p> {{model.movie.plot}}</p>
                         </li>
                     </ul>

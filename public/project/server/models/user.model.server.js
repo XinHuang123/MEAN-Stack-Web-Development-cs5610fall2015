@@ -1,5 +1,4 @@
 "use strict";
-
 module.exports = function (mongoose, db, localStrategy) {
     var q = require('q');
     var UserSchema = require('./user.schema.server.js')(mongoose);
@@ -14,8 +13,9 @@ module.exports = function (mongoose, db, localStrategy) {
         FindByUserName: findUserByName,
         FindByAuth: findUserByAuth
     };
-
     return api;
+
+
 
     function createUser(user) {
         var deferred = q.defer();

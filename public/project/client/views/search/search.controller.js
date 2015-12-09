@@ -5,7 +5,7 @@
         .module("MovieApp")
         .controller("SearchController", SearchController);
 
-    function SearchController($scope,SearchService) {
+    function SearchController(SearchService,$rootScope) {
         var model=this;
         model.search=search;
         model.like=like;
@@ -17,25 +17,10 @@
         }
 
         function like(movie){
-            SearchService.likes(movie);
+            var currentuserid=$rootScope.currentUser._id;
+            SearchService.likes(movie,currentuserid);
         }
 
-        //$scope.searchMovie=searchMovie;
-        //$scope.likeMovie=likeMovie;
-        //
-        //
-        //function searchMovie(title){
-        //    SearchService.searchMovieByTitle(title,function(response){
-        //        $scope.response=response;
-        //    });
-        //
-        //}
-        //
-        //function likeMovie(idIMDB){
-        //    SearchService.likeMovie(idIMDB,function(response){
-        //
-        //    });
-        //}
 
 
 

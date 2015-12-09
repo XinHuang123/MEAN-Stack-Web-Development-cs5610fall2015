@@ -1,5 +1,10 @@
-var myLikes=[];
-module.exports=function(){
+"use strict";
+module.exports=function(mongoose,db){
+    var q = require('q');
+    var UserSchema = require('./user.schema.server.js')(mongoose);
+    var relationModel = db.model('relationModel',UserSchema);
+
+
     var api={
         likes:likes,
         getLikes:getLikes,
@@ -8,59 +13,42 @@ module.exports=function(){
         comment:comment
     };
     return api;
-    function likes(idIMDB,movie){
-        myLikes.push({
-            "idIMDB":idIMDB,
-            "title":movie.title,
-            "poster":movie.urlPoster
-        });
-    }
-    function getLikes(){
-        return myLikes;
-    }
+    function likes(idIMDB,movie,currentuserid){
+        var deferred= q.defer();
+        relationModel.findById(currentuserid, function (err, updateUser) {
+            updateUser.like.push(movie);
 
-    function rate(){
+            updateUser.save(function (err, updatedUser) {
+                if (err) {
+                    deferred.reject(err);
+                } else {
+                    deferred.resolve(updatedUser);
+                }
+            });
+        });
 
     }
 
     function dislike(){
 
     }
+
+    function getLikes(userId){
+        //var deferred = q.defer();
+        //relationModel.findById(userId, function(err, user){
+        //    deferred.resolve(user);
+        //});
+        //return deferred.promise;
+    }
+
+    function rate(){
+
+    }
+
+
     function comment(){
 
     }
 
 }
-//"use strict";
-//var mock=require(mock.json.js);
-//module.exports=function(){
-//    var api={
-//        findAllUsers:findAllUsers,
-//        findUserById:findUserById,
-//        findAllMoviesForUser:findAllMoviesForUser,
-//        userLikesMovie:userLikesMovie
-//    };
-//    return api;
-//
-//    function findAllUsers(){
-//        return mock;
-//    }
-//    function findUserById(id){
-//        for(var i=0;i<mock.length;i++){
-//            if(mock[i].id==id){
-//                return mock[i];
-//            }
-//        }
-//    }
-//
-//    function findAllMoviesForUser(){
-//
-//    }
-//
-//    function userLikesMovie(userId,idIMDB){
-//        var user=findUserById(userId);
-//        user.likes.push({'idIMDB':idIMDB});
-//    }
-//};
-//
-//
+
