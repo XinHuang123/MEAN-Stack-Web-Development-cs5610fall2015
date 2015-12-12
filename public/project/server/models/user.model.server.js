@@ -6,14 +6,15 @@ module.exports = function (mongoose, db, localStrategy) {
 
     var api = {
         Create: createUser,
-        Update: updateUser,
-        Delete: deleteUser,
+        updateUser: updateUser,
+        deleteUser : deleteUser,
         FindAll: findAllUsers,
         FindById: findUserById,
         findUserByUsername: findUserByUsername,
-        FindByAuth: findUserByAuth,
+        FindByAuth: findUserByAuth
     };
     return api;
+
 
     function createUser(user) {
         var deferred = q.defer();
@@ -28,35 +29,52 @@ module.exports = function (mongoose, db, localStrategy) {
         return deferred.promise;
     }
 
-    function updateUser(id, user) {
+    //function updateUser(id, user) {
+    //    var deferred = q.defer();
+    //
+    //    RentUserModel.findById(id, function (err, updateUser) {
+    //        updateUser.firstname = user.firstname;
+    //        updateUser.lastname = user.lastname;
+    //        updateUser.username = user.username;
+    //        updateUser.password = user.password;
+    //        updateUser.email = user.email;
+    //        updateUser.role = user.role;
+    //
+    //        updateUser.save(function (err, updatedUser) {
+    //            if (err) {
+    //                deferred.reject(err);
+    //            } else {
+    //                deferred.resolve(updatedUser);
+    //            }
+    //        });
+    //    });
+    //    return deferred.promise;
+    //}
+    function updateUser(userId, userObj) {
         var deferred = q.defer();
-
-        RentUserModel.findById(id, function (err, updateUser) {
-            updateUser.firstname = user.firstname;
-            updateUser.lastname = user.lastname;
-            updateUser.username = user.username;
-            updateUser.password = user.password;
-            updateUser.email = user.email;
-
-            updateUser.save(function (err, updatedUser) {
-                if (err) {
-                    deferred.reject(err);
-                } else {
-                    deferred.resolve(updatedUser);
-                }
-            });
+        RentUserModel.update({_id: userId}, {$set: userObj}, function(err, user) {
+            if(err) {
+                console.log("Cud not find Usr!!");
+                deferred.reject(err);
+            } else {
+                console.log("Update successful!");
+                RentUserModel.findById(userId, function(err,usr) {
+                    console.log(usr);
+                    deferred.resolve(usr);
+                });
+            }
         });
         return deferred.promise;
     }
 
-    function deleteUser(id) {
+    function deleteUser(userId) {
+        console.log("inside user.model.js deleteUser");
         var deferred = q.defer();
-
-        RentUserModel.remove({_id: id}, function (err, status) {
-            if (err) {
+        RentUserModel.remove({_id: userId}, function(err, user){
+            if(err) {
                 deferred.reject(err);
             } else {
-                deferred.resolve(status);
+                deferred.resolve(user);
             }
         });
         return deferred.promise;

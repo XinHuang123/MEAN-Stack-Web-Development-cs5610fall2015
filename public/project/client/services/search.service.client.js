@@ -8,7 +8,8 @@
         var service={
             searchMovieByTitle:searchMovieByTitle,
             likes:likes,
-            getlike:getlike
+            getlike:getlike,
+            follow:follow
         };
         return service;
 
@@ -27,7 +28,16 @@
 
         function likes(movie,currentuserid){
             var deferred=$q.defer();
-            $http.post("/api/project//movies/likes/"+movie.idIMDB+"/"+ currentuserid,movie)
+            $http.post("/api/project/movies/likes/"+movie.idIMDB+"/"+ currentuserid,movie)
+                .success(function(response){
+                    deferred.resolve(response);
+                });
+            return deferred.promise;
+        }
+
+        function follow(user,currentuserid){
+            var deferred=$q.defer();
+            $http.post("/api/project/user/follow/"+user.username+"/"+ currentuserid,user)
                 .success(function(response){
                     deferred.resolve(response);
                 });
@@ -36,7 +46,7 @@
 
         function getlike() {
             var deferred = $q.defer();
-            var url = "/api/project//movies/likes";
+            var url = "/api/project/movies/likes";
 
             $http.get(url)
                 .success(function(response){

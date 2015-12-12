@@ -17,15 +17,6 @@ module.exports = function (app, model) {
                res.json(user);
             });
     }
-    //function findUserByMovie(req, res) {
-    //    var movie = req.params.movie;
-    //
-    //    model.FindUserByMovie(movie)
-    //        .then(function (user) {
-    //            res.json(user);
-    //        });
-    //}
-
 
     function createUser(req, res) {
         var user = req.body;
@@ -67,24 +58,36 @@ module.exports = function (app, model) {
             });
     }
 
+    //function updateUser(req, res) {
+    //    var user = req.body;
+    //    var id = req.params.id;
+    //
+    //    model.Update(id, user)
+    //        .then(function (updatedUser) {
+    //            res.json(updatedUser);
+    //        });
+    //}
     function updateUser(req, res) {
-        var user = req.body;
-        var id = req.params.id;
-
-        model.Update(id, user)
-            .then(function (updatedUser) {
-                res.json(updatedUser);
+        console.log("Inside server side updateUser");
+        var userId = req.params.id;
+        var userObj = req.body;
+        model
+            .updateUser(userId, userObj)
+            .then(function(user){
+                console.log("Updated user: " + user);
+                res.json(user);
             });
     }
+
 
     function deleteUser(req, res) {
-        var id = req.params.id;
-
-        model.Delete(id)
-            .then(function (users) {
+        console.log("Inside server side deleteUser");
+        var userId = req.params.id;
+        model
+            .deleteUser(userId)
+            .then(function(users){
                 res.json(users);
             });
-
-        res.json(model.delete(id));
     }
+
 };

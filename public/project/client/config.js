@@ -19,7 +19,7 @@
             controller: "LoginController",
             controllerAs: "model"
         })
-        .when("/profile", {
+        .when("/profile/", {
             templateUrl: "views/profile/profile.view.html",
             controller: "ProfileController",
             controllerAs: "model"
@@ -44,11 +44,21 @@
                 controller: "FriendController",
                 controllerAs: "model"
             })
+            .when("/normal_friend", {
+                templateUrl: "views/normal_friend/normal_friend.view.html",
+                controller: "NormalFriendController",
+                controllerAs: "model"
+            })
         .when("/result/:idIMDB", {
             templateUrl: "views/result/result.view.html",
             controller: "ResultController",
             controllerAs: "model"
         })
+            .when("/userprofile/:username/:firstname/:lastname/:email", {
+                templateUrl: "views/userprofile/userprofile.view.html",
+                controller: "UserProfileController",
+                controllerAs: "model"
+            })
         .otherwise({
            redirectTo: "/home"
         });

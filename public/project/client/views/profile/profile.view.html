@@ -23,6 +23,10 @@
                     <label for="inputPassword">Password</label>
                     <input type="password" class="form-control" id="inputPassword" ng-model="model.password"placeholder="Password"/>
                 </div>
+                <div class="form-group">
+                    <label for="inputPassword">Role</label>
+                    <span>{{model.role}}</span>
+                </div>
                 <a class="btn btn-custom" role="button" ng-click="model.update()" type="submit">Update</a>
                 <!--<button ng-click="model.find()" class="btn btn-warning form-control">findallusers</button>-->
                 <!--{{model.users}}-->

@@ -3,9 +3,9 @@
 (function() {
     angular
         .module("MovieApp")
-        .controller("FriendController", FriendController);
+        .controller("NormalFriendController", NormalFriendController);
 
-    function FriendController(UserService,$rootScope,SearchService) {
+    function NormalFriendController(UserService,$rootScope,SearchService) {
         var model = this;
         model.find=find;
         model.follow=follow;
@@ -54,3 +54,4 @@
 
     }
 })();
+

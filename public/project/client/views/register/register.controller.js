@@ -45,7 +45,8 @@
                                     lastname: $scope.lastName,
                                     username: $scope.userName,
                                     password: $scope.password,
-                                    email: $scope.email
+                                    email: $scope.email,
+                                    role:$scope.role
                                 };
 
                                 UserService.Create(user)

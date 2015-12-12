@@ -7,7 +7,9 @@ module.exports = function(mongoose) {
         username: String,
         password: String,
         email: String,
-        like:[]
+        like:[],
+        follow:[],
+        role:String
     }, {collection: 'cs5610.project.user'});
 
     return UserSchema;

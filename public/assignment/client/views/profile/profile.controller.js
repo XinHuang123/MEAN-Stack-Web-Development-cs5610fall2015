@@ -29,6 +29,7 @@
                                 $rootScope.curemail = user.email;
                                 $rootScope.firstname = user.firstName;
                                 $rootScope.lastname = user.lastName;
+                                $rootScope.role = user.role;
                             }
                         });
         }

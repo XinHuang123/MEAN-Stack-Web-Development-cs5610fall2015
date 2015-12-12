@@ -10,9 +10,27 @@ module.exports=function(mongoose,db){
         getLikes:getLikes,
         rate:rate,
         dislike:dislike,
-        comment:comment
+        comment:comment,
+        follow:follow
     };
     return api;
+
+    function follow(username,user,currentuserid){
+        var deferred= q.defer();
+        relationModel.findById(currentuserid, function (err, updateUser) {
+            updateUser.follow.push(user);
+
+            updateUser.save(function (err, updatedUser) {
+                if (err) {
+                    deferred.reject(err);
+                } else {
+                    deferred.resolve(updatedUser);
+                }
+            });
+        });
+
+    }
+
     function likes(idIMDB,movie,currentuserid){
         var deferred= q.defer();
         relationModel.findById(currentuserid, function (err, updateUser) {
