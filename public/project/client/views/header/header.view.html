@@ -16,8 +16,8 @@
             <li ng-if="!user" ng-class="{'active' : $location.url().indexOf('register') !== -1}"><a class="nav-link" href="#/register">Register</a></li>
             <li ng-if="!user" ng-class="{'active' : $location.url().indexOf('login') !== -1}"><a class="nav-link" href="#/login">Login</a></li>
             <li ng-if="user" ng-class="{'active' : $location.url().indexOf('profile') !== -1}"><a class="nav-link" href="#/profile">Profile</a></li>
-            <!--<li ng-if="user" ng-class="{'active' : $location.url().indexOf('addListing') !== -1}"><a class="nav-link" href="#/addListing">Add Listing</a></li>-->
             <li ng-if="user" ng-class="{'active' : $location.url().indexOf('myListing') !== -1}"><a class="nav-link" href="#/myListing">Likes</a></li>
+            <li ng-if="user" ng-class="{'active' : $location.url().indexOf('friend') !== -1}"><a class="nav-link" href="#/friend">Friend</a></li>
             <li ng-class="{'active' : $location.url().indexOf('search') !== -1}"><a class="nav-link" href="#/search">Search</a></li>
             <li ng-if="user"><a class="nav-link">{{ user.username }}</a></li>
             <li ng-if="user"><a class="nav-link" ng-click="logout()">Logout</a></li>

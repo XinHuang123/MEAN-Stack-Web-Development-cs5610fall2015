@@ -1,5 +1,4 @@
 "use strict";
-
 (function(){
     angular
         .module("MovieApp")
@@ -7,14 +6,24 @@
 
     function UserService($http, $q) {
         var service = {
+            findUserByUsername:findUserByUsername,
             Create: createUser,
             Update: updateUser,
             Delete: deleteUser,
             FindAll: findAllUsers,
-            FindByAuth: findUserByAuth
+            FindByAuth: findUserByAuth,
         };
-
         return service;
+
+        function findUserByUsername(username){
+            var deferred = $q.defer();
+            $http.get("/api/project/user/username=" + username)
+            //$http({url: "/api/project/user/username=" + username , method: "GET"})
+                .success(function(user){
+                    deferred.resolve(user);
+                });
+            return deferred.promise;
+        }
 
         function createUser(user) {
             var deferred = $q.defer();

@@ -39,6 +39,11 @@
             controller: "MyListingController",
             controllerAs: "model"
         })
+            .when("/friend", {
+                templateUrl: "views/friend/friend.view.html",
+                controller: "FriendController",
+                controllerAs: "model"
+            })
         .when("/result/:idIMDB", {
             templateUrl: "views/result/result.view.html",
             controller: "ResultController",

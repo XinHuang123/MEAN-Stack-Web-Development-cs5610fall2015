@@ -1,8 +1,8 @@
 "use strict";
+var q = require("q");
 module.exports = function (mongoose, db, localStrategy) {
-    var q = require('q');
     var UserSchema = require('./user.schema.server.js')(mongoose);
-    var RentUserModel = db.model('RentUserModel', UserSchema);
+    var RentUserModel = mongoose.model('RentUserModel', UserSchema);
 
     var api = {
         Create: createUser,
@@ -10,12 +10,10 @@ module.exports = function (mongoose, db, localStrategy) {
         Delete: deleteUser,
         FindAll: findAllUsers,
         FindById: findUserById,
-        FindByUserName: findUserByName,
-        FindByAuth: findUserByAuth
+        findUserByUsername: findUserByUsername,
+        FindByAuth: findUserByAuth,
     };
     return api;
-
-
 
     function createUser(user) {
         var deferred = q.defer();
@@ -90,15 +88,10 @@ module.exports = function (mongoose, db, localStrategy) {
         return deferred.promise;
     }
 
-    function findUserByName(username) {
+    function findUserByUsername(username) {
         var deferred = q.defer();
-
-        RentUserModel.findOne({username: username}, function (err, user) {
-            if (err) {
-                deferred.reject(err);
-            } else {
-                deferred.resolve(user);
-            }
+        RentUserModel.find({username : username}, function(err, user){
+            deferred.resolve(user);
         });
         return deferred.promise;
     }

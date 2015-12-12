@@ -17,13 +17,9 @@
     function ProfileController(UserService,$rootScope) {
         var model = this;
         model.update = update;
+        model.find=find;
         var loginuser=$rootScope.currentUser;
 
-        //model.username = $rootScope.curusername;
-        //model.password = $rootScope.curpwd;
-        //model.email = $rootScope.curemail;
-        //model.firstname = $rootScope.firstname;
-        //model.lastname = $rootScope.lastname;
         model.username = loginuser.username;
         model.password = loginuser.password;
         model.email = loginuser.email;
@@ -39,14 +35,16 @@
                         console.log("user : " + user);
                         console.log("Updated username: " + user.username);
                         $rootScope.currentUser=userobj;
-                        //$rootScope.curusername = user.username;
-                        //$rootScope.curpwd = user.password;
-                        //$rootScope.curid = user._id;
-                        //$rootScope.curemail = user.email;
-                        //$rootScope.firstname = user.firstName;
-                        //$rootScope.lastname = user.lastName;
-                        //$rootScope.currentUser=
+
                     }
+                });
+        }
+
+
+        function find(){
+            UserService.FindAll()
+                .then(function(users){
+                    model.users=users;
                 });
         }
     }

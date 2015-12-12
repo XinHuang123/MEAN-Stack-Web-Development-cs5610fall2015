@@ -5,7 +5,7 @@
         .module("MovieApp")
         .controller("ResultController", ResultController);
 
-    function ResultController($routeParams,$http) {
+    function ResultController($routeParams,$http,UserService) {
         var model=this;
 
         var id=$routeParams.idIMDB;
@@ -15,5 +15,7 @@
                 console.log(response);
                 model.movie=response;
             });
+
+        //model.user=UserService.FindUserByMovie(model.movie);
     }
 })();

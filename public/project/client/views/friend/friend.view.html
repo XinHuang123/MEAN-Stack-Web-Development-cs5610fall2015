@@ -1,0 +1,51 @@
+<div class="main page-offset">
+    <div class="row clearfix no-margin">
+        <div class="search-container col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-2">
+            <h3>Search User By Username</h3>
+
+            <form class="form-horizontal">
+                <div class="form-group form-group-lg">
+                    <div class="col-xs-10 search-form-input">
+                        <!--<input ng-model="model.username" class="form-control search-box" type="text" id="search" placeholder="Username">-->
+                        <!--<input id="pwd" ng-model="model.user.pwd" type="password" class="form-control" placeholder="Password">-->
+                    </div>
+                    <!--<button ng-click="model.find()" class="btn btn-warning form-control">findallusers</button>-->
+                    <a ng-click="model.find()" class="btn btn-custom col-xs-2 search-button"><span
+                            class="glyphicon glyphicon-search"
+                            aria-hidden="true"></span></a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+    <div class="col-xs-11 col-md-9 col-centered">
+        <h4>Users</h4>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>Follow</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+
+            <!--<tr ng-repeat="user in model.user">-->
+            <tr ng-repeat="user in model.users">
+                <td>
+                    <a href="#/profile/">{{user.username}}</a>
+                </td>
+                <td>
+                    <button ng-click="model.like(user)" class="btn btn-info">
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                    </button>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

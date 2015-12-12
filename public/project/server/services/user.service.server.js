@@ -5,6 +5,27 @@ module.exports = function (app, model) {
     app.get("/api/project/user/:id", findUserById);
     app.put("/api/project/user/:id", updateUser);
     app.delete("/api/project/user/:id", deleteUser);
+    app.get("/api/project/user/username=:username", findUserByUsername);
+
+
+    function findUserByUsername(req,res){
+        console.log("Inside server side findUserByUsername");
+        var username=req.params.username;
+        model
+            .findUserByUsername(username)
+            .then(function(user){
+               res.json(user);
+            });
+    }
+    //function findUserByMovie(req, res) {
+    //    var movie = req.params.movie;
+    //
+    //    model.FindUserByMovie(movie)
+    //        .then(function (user) {
+    //            res.json(user);
+    //        });
+    //}
+
 
     function createUser(req, res) {
         var user = req.body;
