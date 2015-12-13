@@ -26,7 +26,7 @@
         }
 
         function update(user){
-            var userId=model.user._id;
+            var userId=user._id;
             UserService.updateUser(userId,user)
                 .then(function(users){
                     model.users=users;
