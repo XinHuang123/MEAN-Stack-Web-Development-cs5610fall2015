@@ -19,6 +19,7 @@
         model.update = update;
         model.find=find;
         var loginuser=$rootScope.currentUser;
+        model.followusers=loginuser.follow;
 
         model.username = loginuser.username;
         model.password = loginuser.password;

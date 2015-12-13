@@ -28,9 +28,30 @@
                     <span>{{model.role}}</span>
                 </div>
                 <a class="btn btn-custom" role="button" ng-click="model.update()" type="submit">Update</a>
-                <!--<button ng-click="model.find()" class="btn btn-warning form-control">findallusers</button>-->
-                <!--{{model.users}}-->
             </form>
         </div>
     </div>
+
+    <div class="description col-xs-11 col-sm-11">
+        <h4>Follow User List</h4>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Username</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="user in model.followusers">
+                <td>
+                    <a href="#/userprofile/{{user.username}}/{{user.firstname}}/{{user.lastname}}/{{user.email}}">{{user.username}}</a>
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
 </div>

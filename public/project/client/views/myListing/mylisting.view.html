@@ -5,7 +5,7 @@
             <ul class="property-list">
                 <li class="property clearfix">
                     <div class="property-image col-xs-12 col-sm-4">
-                        <img src="img/BBQ.jpg" alt="Living" class="search-image"/>
+                        <img src="img/movie2.jpg" alt="Living" class="search-image"/>
                     </div>
                     <div class="property-details col-xs-12 col-sm-8">
                         <button type="button" class="btn btn-danger edit-button" id="edit-listing" aria-label="Pencil">
@@ -23,21 +23,18 @@
                                     <th>Movie Title</th>
                                 </tr>
                                 </thead>
-                                <tbody>
 
+                                <tbody>
                                 <tr ng-repeat="like in model.likes">
                                     <td>
                                         <a href="#/result/{{like.idIMDB}}">{{like.title}}</a>
 
                                     </td>
                                 </tr>
-
-
                                 </tbody>
                             </table>
-
-
                         </div>
+
                     </div>
                 </li>
             </ul>
