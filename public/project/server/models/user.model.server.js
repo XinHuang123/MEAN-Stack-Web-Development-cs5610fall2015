@@ -29,27 +29,6 @@ module.exports = function (mongoose, db, localStrategy) {
         return deferred.promise;
     }
 
-    //function updateUser(id, user) {
-    //    var deferred = q.defer();
-    //
-    //    RentUserModel.findById(id, function (err, updateUser) {
-    //        updateUser.firstname = user.firstname;
-    //        updateUser.lastname = user.lastname;
-    //        updateUser.username = user.username;
-    //        updateUser.password = user.password;
-    //        updateUser.email = user.email;
-    //        updateUser.role = user.role;
-    //
-    //        updateUser.save(function (err, updatedUser) {
-    //            if (err) {
-    //                deferred.reject(err);
-    //            } else {
-    //                deferred.resolve(updatedUser);
-    //            }
-    //        });
-    //    });
-    //    return deferred.promise;
-    //}
     function updateUser(userId, userObj) {
         var deferred = q.defer();
         RentUserModel.update({_id: userId}, {$set: userObj}, function(err, user) {
