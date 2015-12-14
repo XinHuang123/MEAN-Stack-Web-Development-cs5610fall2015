@@ -2,7 +2,7 @@
 var q = require("q");
 module.exports = function (mongoose, db, localStrategy) {
     var UserSchema = require('./user.schema.server.js')(mongoose);
-    var UserModel = mongoose.model('RentUserModel', UserSchema);
+    var UserModel = mongoose.model('UserModel', UserSchema);
 
     var api = {
         Create: createUser,
@@ -37,7 +37,7 @@ module.exports = function (mongoose, db, localStrategy) {
                 deferred.reject(err);
             } else {
                 console.log("Update successful!");
-                RentUserModel.findById(userId, function(err,usr) {
+                UserModel.findById(userId, function(err,usr) {
                     console.log(usr);
                     deferred.resolve(usr);
                 });
@@ -75,7 +75,7 @@ module.exports = function (mongoose, db, localStrategy) {
     function findUserById(id) {
         var deferred = q.defer();
 
-        RentUserModel.findById({_id: id}, function (err, user) {
+        UserModel.findById({_id: id}, function (err, user) {
             if (err) {
                 deferred.reject(err);
             } else {

@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b525298-0517-4b22-af6c-dbf71c0f8b1d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/client/views/myListing/mylisting.view.html" afterPath="$PROJECT_DIR$/public/project/client/views/myListing/mylisting.view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/client/views/result/result.view.html" afterPath="$PROJECT_DIR$/public/project/client/views/result/result.view.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/server/models/user.model.server.js" afterPath="$PROJECT_DIR$/public/project/server/models/user.model.server.js" />
     </list>
     <ignored path="cs5610.iws" />
@@ -28,8 +26,18 @@
       <file leaf-file-name="friend.view.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/project/client/views/friend/friend.view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.375">
-              <caret line="41" column="58" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+            <state vertical-scroll-proportion="-18.25">
+              <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="friend.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/project/client/views/friend/friend.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -45,31 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.model.server.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="user.model.server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/project/server/models/user.model.server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="result.view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/project/client/views/result/result.view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.75">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mylisting.view.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/project/client/views/myListing/mylisting.view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2027027">
-              <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.58220214">
+              <caret line="88" column="33" selection-start-line="88" selection-start-column="33" selection-end-line="88" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -139,9 +127,9 @@
         <option value="$PROJECT_DIR$/public/project/client/views/friend/friend.controller.js" />
         <option value="$PROJECT_DIR$/public/project/client/views/friend/friend.view.html" />
         <option value="$PROJECT_DIR$/public/project/server/app.js" />
-        <option value="$PROJECT_DIR$/public/project/server/models/user.model.server.js" />
         <option value="$PROJECT_DIR$/public/project/client/views/result/result.view.html" />
         <option value="$PROJECT_DIR$/public/project/client/views/myListing/mylisting.view.html" />
+        <option value="$PROJECT_DIR$/public/project/server/models/user.model.server.js" />
       </list>
     </option>
   </component>
@@ -365,6 +353,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="myListing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs5610" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs5610" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="friend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -782,14 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/client/views/friend/friend.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/project/client/services/search.service.client.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.037464">
@@ -830,14 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/client/views/friend/friend.view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.375">
-          <caret line="41" column="58" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/project/client/services/user.service.client.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -870,26 +872,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/server/models/user.model.server.js">
+    <entry file="file://$PROJECT_DIR$/public/project/client/views/myListing/mylisting.view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.4954955">
+          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/project/client/views/result/result.view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
+        <state vertical-scroll-proportion="0.13513513">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/client/views/myListing/mylisting.view.html">
+    <entry file="file://$PROJECT_DIR$/public/project/client/views/friend/friend.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2027027">
-          <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/project/client/views/friend/friend.view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.25">
+          <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/project/server/models/user.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58220214">
+          <caret line="88" column="33" selection-start-line="88" selection-start-column="33" selection-end-line="88" selection-end-column="33" />
           <folding />
         </state>
       </provider>
