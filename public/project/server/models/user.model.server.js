@@ -2,7 +2,7 @@
 var q = require("q");
 module.exports = function (mongoose, db, localStrategy) {
     var UserSchema = require('./user.schema.server.js')(mongoose);
-    var RentUserModel = mongoose.model('RentUserModel', UserSchema);
+    var UserModel = mongoose.model('RentUserModel', UserSchema);
 
     var api = {
         Create: createUser,
@@ -19,7 +19,7 @@ module.exports = function (mongoose, db, localStrategy) {
     function createUser(user) {
         var deferred = q.defer();
 
-        RentUserModel.create(user, function (err, newUser) {
+        UserModel.create(user, function (err, newUser) {
             if (err) {
                 deferred.reject(err);
             } else {
@@ -31,7 +31,7 @@ module.exports = function (mongoose, db, localStrategy) {
 
     function updateUser(userId, userObj) {
         var deferred = q.defer();
-        RentUserModel.update({_id: userId}, {$set: userObj}, function(err, user) {
+        UserModel.update({_id: userId}, {$set: userObj}, function(err, user) {
             if(err) {
                 console.log("Cud not find Usr!!");
                 deferred.reject(err);
@@ -49,7 +49,7 @@ module.exports = function (mongoose, db, localStrategy) {
     function deleteUser(userId) {
         console.log("inside user.model.js deleteUser");
         var deferred = q.defer();
-        RentUserModel.remove({_id: userId}, function(err, user){
+        UserModel.remove({_id: userId}, function(err, user){
             if(err) {
                 deferred.reject(err);
             } else {
@@ -62,7 +62,7 @@ module.exports = function (mongoose, db, localStrategy) {
     function findAllUsers() {
         var deferred = q.defer();
 
-        RentUserModel.find(function (err, users) {
+        UserModel.find(function (err, users) {
             if (err) {
                 deferred.reject(err);
             } else {
@@ -87,7 +87,7 @@ module.exports = function (mongoose, db, localStrategy) {
 
     function findUserByUsername(username) {
         var deferred = q.defer();
-        RentUserModel.find({username : username}, function(err, user){
+        UserModel.find({username : username}, function(err, user){
             deferred.resolve(user);
         });
         return deferred.promise;
@@ -96,7 +96,7 @@ module.exports = function (mongoose, db, localStrategy) {
     function findUserByAuth(username, password) {
         var deferred = q.defer();
 
-        RentUserModel.findOne({username: username, password: password}, function (err, user) {
+        UserModel.findOne({username: username, password: password}, function (err, user) {
             if (err) {
                 deferred.reject(err);
             } else {
