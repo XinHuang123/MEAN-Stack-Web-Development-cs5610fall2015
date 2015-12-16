@@ -7,10 +7,10 @@
     function UserService($http, $q) {
         var service = {
             findUserByUsername:findUserByUsername,
-            Create: createUser,
+            createUser: createUser,
             deleteUserById: deleteUserById,
-            FindAll: findAllUsers,
-            FindByAuth: findUserByAuth,
+            findAllUsers: findAllUsers,
+            findUserByAuth: findUserByAuth,
             findUserById:findUserById,
             updateUser: updateUser
         };

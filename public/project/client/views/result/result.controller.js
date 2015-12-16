@@ -15,7 +15,5 @@
                 console.log(response);
                 model.movie=response;
             });
-
-        //model.user=UserService.FindUserByMovie(model.movie);
     }
 })();

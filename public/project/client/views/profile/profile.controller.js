@@ -44,7 +44,7 @@
 
 
         function find(){
-            UserService.FindAll()
+            UserService.findAllUsers()
                 .then(function(users){
                     model.users=users;
                 });

@@ -14,7 +14,7 @@
         model.remove=remove;
 
         function find(){
-            UserService.FindAll()
+            UserService.findAllUsers()
                 .then(function(users){
                     model.users=users;
                 });
@@ -49,7 +49,7 @@
 
         }
         function init() {
-            UserService.FindAll()
+            UserService.findAllUsers()
                 .then(function(users){
                     model.users = users;
                 });

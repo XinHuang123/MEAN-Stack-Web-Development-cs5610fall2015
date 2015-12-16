@@ -58,15 +58,7 @@ module.exports = function (app, model) {
             });
     }
 
-    //function updateUser(req, res) {
-    //    var user = req.body;
-    //    var id = req.params.id;
-    //
-    //    model.Update(id, user)
-    //        .then(function (updatedUser) {
-    //            res.json(updatedUser);
-    //        });
-    //}
+
     function updateUser(req, res) {
         console.log("Inside server side updateUser");
         var userId = req.params.id;
