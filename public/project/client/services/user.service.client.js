@@ -19,8 +19,8 @@
 
         function findUserByUsername(username){
             var deferred = $q.defer();
+
             $http.get("/api/project/user/username=" + username)
-            //$http({url: "/api/project/user/username=" + username , method: "GET"})
                 .success(function(user){
                     deferred.resolve(user);
                 });
@@ -29,9 +29,8 @@
 
         function createUser(user) {
             var deferred = $q.defer();
-            var url = '/api/project/user';
 
-            $http.post(url, user)
+            $http.post("/api/project/user", user)
                 .success(function(response){
                     deferred.resolve(response);
                 }).error(function(error){
@@ -43,6 +42,7 @@
 
         function deleteUserById(userId) {
             var deferred = $q.defer();
+
             $http.delete("/api/project/user/" + userId)
                 .success(function(users){
                     deferred.resolve(users);
@@ -54,9 +54,8 @@
 
         function findAllUsers() {
             var deferred = $q.defer();
-            var url = '/api/project/user/';
 
-            $http.get(url)
+            $http.get("/api/project/user/")
                 .success(function(response){
                     deferred.resolve(response);
                 }).error(function(error){
@@ -68,6 +67,7 @@
 
         function findUserById(userId) {
             var deferred = $q.defer();
+
             $http.get("/api/project/user/"+userId)
                 .success(function(user){
                     deferred.resolve(user);
@@ -78,9 +78,8 @@
 
         function findUserByAuth(userName, password) {
             var deferred = $q.defer();
-            var url = '/api/project/user?username=' + userName + "&password=" + password;
 
-            $http.get(url)
+            $http.get("/api/project/user?username=" + userName + "&password=" + password)
                 .success(function(response){
                     deferred.resolve(response);
                 }).error(function(error){

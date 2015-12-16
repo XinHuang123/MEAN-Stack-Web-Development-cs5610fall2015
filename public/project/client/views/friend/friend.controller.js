@@ -28,10 +28,11 @@
         function update(user){
             var userId=user._id;
             UserService.updateUser(userId,user)
-                .then(function(users){
-                    model.users=users;
+                .then(function(user){
+                    model.user=user;
                 });
         }
+
 
         function select(id){
             UserService.findUserById(id)
@@ -42,13 +43,18 @@
 
         function remove(id){
             UserService.deleteUserById(id)
-                .then(function(users){//the courses come from server
-                    model.users=users;
+                .then(function(user){
+                    model.user=user;
                 });
 
         }
-
-
+        function init() {
+            UserService.FindAll()
+                .then(function(users){
+                    model.users = users;
+                });
+        }
+        init();
 
 
 
