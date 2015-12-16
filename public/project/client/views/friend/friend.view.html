@@ -2,19 +2,11 @@
     <div class="row clearfix no-margin">
         <div class="search-container col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-2">
             <h3>User List</h3>
-            <form class="form-horizontal">
-                <div class="form-group form-group-lg">
-                    <a ng-click="model.find()" class="btn btn-custom col-xs-2 search-button"><span
-                            class="glyphicon glyphicon-search"
-                            aria-hidden="true"></span></a>
-                </div>
-            </form>
         </div>
     </div>
 
 
     <div class="col-xs-11 col-md-9 col-centered">
-        <h4>Users</h4>
 
         <table class="table table-striped">
             <thead>
@@ -35,6 +27,8 @@
                 <td>
                     <button class="btn btn-success"
                             ng-click="model.update(model.user)">Update</button>
+                    <button class="btn btn-success"
+                            ng-click="model.find()">Refesh</button>
                 </td>
             </tr>
             </thead>

@@ -13,6 +13,14 @@
         model.select=select;
         model.remove=remove;
 
+        function init() {
+            UserService.FindAll()
+                .then(function(users){
+                    model.users = users;
+                });
+        }
+        init();
+
         function find(){
             UserService.FindAll()
                 .then(function(users){
