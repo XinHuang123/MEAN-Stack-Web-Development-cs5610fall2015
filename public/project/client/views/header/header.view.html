@@ -12,6 +12,7 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse navbar-background">
         <ul class="nav navbar-nav navbar-right">
+            <li ng-if="user" ng-class="{'active' : $location.url().indexOf('notice') !== -1}"><a class="nav-link" href="#/notice">Notice</a></li>
             <li ng-class="{'active' : $location.url().indexOf('home') !== -1}"><a class="nav-link" href="#/home">Home</a></li>
             <li ng-if="!user" ng-class="{'active' : $location.url().indexOf('register') !== -1}"><a class="nav-link" href="#/register">Register</a></li>
             <li ng-if="!user" ng-class="{'active' : $location.url().indexOf('login') !== -1}"><a class="nav-link" href="#/login">Login</a></li>

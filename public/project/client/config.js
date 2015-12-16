@@ -59,6 +59,11 @@
                 controller: "UserProfileController",
                 controllerAs: "model"
             })
+            .when("/notice", {
+                templateUrl: "views/notice/notice.view.html",
+                controller: "NoticeController",
+                controllerAs: "model"
+            })
         .otherwise({
            redirectTo: "/home"
         });
