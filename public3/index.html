@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NeuroSkyApp">
+<head>
+    <title>Data Analysis</title>
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <!--<link rel="stylesheet" href="css/style.css">-->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-route.js"></script>
+    <script src="controller.js"></script>
+    <script src="download.js"></script>
+
+
+</head>
+
+<body>
+    <h1 class="page-header">NeuroSky Store Products Table</h1>
+    <h2 class="sub-header">Top Products</h2>
+
+
+<div class="container" ng-controller="ProductController">
+
+    <div>
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="startdate">Start Date: </label>
+                <input ng-model="start" type="date" class="form-control" id="startdate" placeholder="Start Date">
+            </div>
+            <div class="form-group">
+                <label for="enddate">End Date: </label>
+                <input ng-model="end" type="date" class="form-control" id="enddate" placeholder="End Date">
+            </div>
+            <button type="submit" class="btn btn-success" ng-click="search(start,end)">Submit</button>
+        </form>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>
+                    <!--<a href="#" ng-init="count=0" ng-click="Price(count,count=count+1)">Price</a>-->
+                   Price
+                </th>
+                <th>
+                    <a href="#" ng-init="count=0" ng-click="Quantity(count,count=count+1)">Quantity</a>
+                </th>
+                <th>
+                    <a href="#" ng-init="count=0" ng-click="TotalAmount(count,count=count+1)">Total Amount</a>
+                </th>
+            </tr>
+            </thead>
+
+            <!--<tbody ng-repeat="attribute in product">-->
+            <tbody>
+            <!--<tr ng-repeat="item in attribute.line_items">-->
+            <tr ng-repeat="item in result">
+                    <td></td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.quantity*item.price}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div>
+            <a href = "https://neurosky.myshopify.com/admin/orders.json?created_at_min={{startTime}},created_at_max={{endTime}}" id = "save" download="data.json">Click to Download JSON File From API</a>
+            <!--<input type="file" id="load" ng-model="uploadData"/>-->
+        </div>
+        <!--<button type="submit" class="btn btn-primary" ng-click="upload(uploadData)">Upload</button>-->
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>
