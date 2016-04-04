@@ -1,0 +1,70 @@
+<script>
+    'use strict';
+    var app=angular.module("NeuroSkyApp",[]);
+    app.controller("ProductController", ProductController);
+
+    function ProductController($scope,$http){
+        //$http.get("orders_line_item.json")
+        var url="https://neurosky.myshopify.com/admin/orders.json?format=JSONP&callback=JSON_CALLBACK";
+        $http.jsonp(url)
+                .then(function(response) {
+
+                    $scope.search=function(start,end){
+                        console.log(start);
+                        console.log(end);
+                        var timedata=response.data;
+                    }
+
+                    //merge the products which have same title
+                    var data=response.data;
+                    var newData = {line_items:[]};
+
+                    for (var i = 0; i < data.orders.length;i++){
+                        //console.log(data.orders[i].line_items.length);
+                        for(var j=0;j< data.orders[i].line_items.length;j++){
+                            var resindex = newDataContains(data.orders[i].line_items[j].title);
+                            console.log(resindex);
+                            //console.log(data.orders[i].line_items(j).length);
+                            if (resindex == -1){
+                                console.log("Adding new data");
+                                //newData.line_items[m].push({line_items:[]});
+                                newData.line_items.push({title: data.orders[i].line_items[j].title,
+                                    quantity: data.orders[i].line_items[j].quantity,
+                                    price:data.orders[i].line_items[j].price});
+                                console.log(newData.line_items);
+                            }
+                            else {
+                                console.log("Data already exists increasing quantity");
+                                newData.line_items[resindex].quantity += data.orders[i].line_items[j].quantity;
+                            }
+                        }
+                    }
+
+                    function newDataContains(title){
+                        for (var a=0; a < newData.line_items.length; a++){
+                            if (JSON.stringify(newData.line_items[a].title) == JSON.stringify(title)) {
+                                return a;
+                            }
+                        }
+                        return -1;
+                    }
+                    console.log(newData);
+
+                    var res=newData.line_items;
+
+                    //sort the order by quantity
+                    res.sort(function(a,b) {
+                        if (a.quantity > b.quantity)return -1;
+                        if (a.quantity < b.quantity)return 1;
+                        return 0;
+                    });
+                    $scope.result=newData.line_items;
+
+
+                });
+
+
+    }
+
+
+</script>

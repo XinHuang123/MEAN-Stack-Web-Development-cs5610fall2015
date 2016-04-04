@@ -1,0 +1,114 @@
+<html>
+<head>
+    <title>Watson Developer Cloud : Simple Catalog</title>
+    <style type="text/css">
+        body {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 768px;
+            font-family: Helvetica Neue, Helvetica, Arial, Sans;
+        }
+
+        .catalog {
+            min-height: 200px;
+            border: 2px solid black;
+            background-color: #eeeeee;
+            padding: 1em;
+        }
+
+        ul.service-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        img.service-icon {
+            display: inline-block;
+            max-width: 60px;
+            max-height: 60px;
+            margin-right: 1em;
+            vertical-align: middle;
+        }
+        span.service-name {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // HERE IS THE URL OF THE SERVICE THAT YOU'LL NEED
+        var endpoint = "https://hirevue-watson-services.mybluemix.net/";
+
+        // THIS FUNCTION IS CALLED WHEN THE PAGE IS READY
+        function onReady($http) {
+            $.getJSON(endpoint, function(data) {
+                // DO SOMETHING WITH THE RESULTS - HERE WE JUST APPEND THE RESULTS
+                // AS AN EXAMPLE FOR YOU. YOU'LL NEED TO MAKE ADDITIONAL REQUESTS
+                // TO GET INFORMATION FOR EACH SERVICE.
+
+                // AS WE'VE USED $.getJSON, THE RESULTS OF THE FIRST QUERY WILL
+                // BE A JAVASCRIPT OBJECT THAT YOU CAN USE TO APPEND TO THE
+                // LIST OF SERVICES.
+
+                // HERE IS A SIMPLE EXAMPLE OF HOW YOU MIGHT APPEND DATA TO
+                // ANOTHER ELEMENT USING jQUERY.
+//                 $("#service-list").append("<li>" + JSON.stringify(data) + "</li>");
+
+//                var deferred=$q.defer();
+                for(var url in data){
+                    console.log(url);
+                    $http.jsonp(url)
+                            .success(function(response){
+                                deferred.resolve(response);
+                                $("#service-list").append("<li>" + JSON.stringify(response.endpoint) + "</li>");
+                                $("#service-list").append("<li>" + JSON.stringify(response.name) + "</li>");
+                                $("#service-list").append("<li>" + JSON.stringify(response.icon) + "</li>");
+                            });
+//                    return deferred.promise;
+                }
+
+            }).fail(function (err) {
+                console.log(err);
+            });
+        }
+
+
+    </script>
+</head>
+<body>
+<h1>Watson Developer Cloud : Simple Catalog</h1>
+<p>
+    Your task is to create a simple catalog of a few Watson Developer Cloud
+    Services using a set of AJAX requests from your browser to a remote server.
+    Your first request, which has been done for you, will return a set of
+    additional URLs as a JSON array. When queried, each URL provides more
+    information about a Watson Developer Cloud service as a JSON object that
+    looks like this:
+</p>
+<pre><code>
+    {
+    "endpoint":"e3851fdf-24a0-4ad4-9dae-2485c8bd6588",
+    "name":"Tradeoff Analytics",
+    "icon":"http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/img/service-icons/tradeoff-analytics.png"
+    }
+</code></pre>
+<p>
+    Your job is to request information about each of the additional services
+    and add their information after the Tradeoff Analytics item below.
+    Your items should be added so they match the same format and also so they're
+    listed in the same order as in the original JSON request we've provided
+    in the page code. As with all web sites, correctness, efficiency, and
+    elegance all play a role in this task.
+</p>
+<p>
+    Also, we realize that not everyone is familiar with jQuery. If there is another library or
+    framework that you'd rather use for this task, feel free.
+</p>
+<div id="catalog" class="catalog">
+    <ul class="service-list">
+        <li><img class="service-icon" src="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/img/service-icons/tradeoff-analytics.png"><span class="service-name">Tradeoff Analytics</span></span></li>
+    </ul>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(onReady);
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+body
+{
+    counter-reset: Serial;           /* Set the Serial counter to 0 */
+}
+
+table
+{
+    border-collapse: separate;
+}
+
+tr td:first-child:before
+{
+    counter-increment: Serial;      /* Increment the Serial counter */
+    /*content: "No." counter(Serial); /!* Display the counter *!/*/
+    content:counter(Serial); /* Display the counter */
+}

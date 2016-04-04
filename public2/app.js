@@ -6,18 +6,9 @@
 	function courseController($scope,$http,CourseService){//$http query data from URL
 		
 		CourseService.readAllCourses(renderCourses);				
-				
-		$scope.selectCourse=selectCourse;
-		function selectCourse(index)
-		{
-			$scope.selectedCourseIndex=index;
-			CourseService.readOneCourseById(index,function(response)
-			{
-				$scope.course=response;
-			});	
-		}
-		
+
 		$scope.removeCourse=removeCourse;
+
 		function removeCourse(index)
 		{
 			CourseService.deleteCourseById(index,renderCourses);
@@ -38,6 +29,16 @@
 		function createCourse(course)
 		{
 			CourseService.createCourse(course,renderCourses);
+		}
+
+		$scope.selectCourse=selectCourse;
+		function selectCourse(index)
+		{
+			$scope.selectedCourseIndex=index;
+			CourseService.readOneCourseById(index,function(response)
+			{
+				$scope.course=response;
+			});
 		}
 	}
 })();
